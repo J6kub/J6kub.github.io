@@ -26,7 +26,7 @@ h1 {
 	display:flex;
 	width:100%;
 	height:auto;
-	
+	flex-wrap: wrap;
 	position:relative;
 	flex-direction:row;
 	
