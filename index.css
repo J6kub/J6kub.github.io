@@ -22,15 +22,31 @@ h1 {
 	width:100%;
 	display:inline-block;
 }
+.boxies {
+	display:flex;
+	width:100%;
+	height:auto;
+	
+	position:relative;
+	flex-direction:row;
+	
+}
+.boxy {
+	flex-grow:auto;
+	margin:10px
+}
+.boxy li {
+	font-size:35;
+	font-family: "Comic Sans MS", "Comic Sans";
+}
 #info {
 	display:inline-block;
-	position:relative;
-	left:50%;
-	transform:translate(-50%,0);
+	
+	
 	padding:10;
 	background-color:rgba(0,0,0,0.3);
 	width:30%;
-	text-align:center;
+	text-align:left;
 	
 }
 #info p {
