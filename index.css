@@ -35,6 +35,9 @@ h1 {
 	flex-grow:auto;
 	margin:10px
 }
+.boxy img {
+	max-width:100%;
+}
 .boxy li {
 	font-size:35;
 	font-family: "Comic Sans MS", "Comic Sans";
