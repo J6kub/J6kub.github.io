@@ -1,5 +1,14 @@
 body {
-	background-color:rgba(0,0,0,0)
+	background-color:rgba(0,0,0,0);
+	color:white;
+}
+h1 {
+	text-align:center;
+	background-color:rgba(0,0,0,0.3);
+	padding:15px;
+	margin:0;
+	display:inline-block;
+	width:auto;
 }
 #background {
 	z-index:-5;
@@ -12,4 +21,23 @@ body {
 	height:100%;
 	width:100%;
 	display:inline-block;
+}
+#info {
+	display:inline-block;
+	position:relative;
+	left:50%;
+	transform:translate(-50%,0);
+	padding:10;
+	background-color:rgba(0,0,0,0.3);
+	width:30%;
+	text-align:center;
+	
+}
+#info p {
+	margin-left:10 px;
+	margin-right:10 px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:35px;
+	font-family: "Comic Sans MS", "Comic Sans";
 }
