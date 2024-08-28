@@ -1,3 +1,9 @@
 body {
-	background-color:pink
+	background-color:rgba(0,0,0,0)
+}
+#background {
+	z-index:-5;
+	background-image:url("bkg.jpg");
+	background-repeat:no-repeat;
+	bakcground-size:cover;
 }
