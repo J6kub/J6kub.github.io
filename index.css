@@ -6,4 +6,10 @@ body {
 	background-image:url("bkg.jpg");
 	background-repeat:no-repeat;
 	bakcground-size:cover;
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	display:inline-block;
 }
