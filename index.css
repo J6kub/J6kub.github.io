@@ -60,3 +60,9 @@ h1 {
 	font-size:35px;
 	font-family: "Comic Sans MS", "Comic Sans";
 }
+#info button { 
+	padding:10;
+	font-size: 30;
+	background-color:rgba(0,0,0,0.3);
+	color:white;
+}
