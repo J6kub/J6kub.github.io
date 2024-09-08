@@ -1,0 +1,447 @@
+<html>
+	<head> 
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="assets/game.css">
+
+	</head>
+	<body>
+		<div class="main">
+			<h1>PotatoGun 2d</h1>
+			<button onclick="switchInit()">INFO</button>
+			<form hidden>
+				<input name="x" value=0></input>
+				<input name="y" value=0></input>
+			</form><br>
+			<div id ="gameWindow">
+				<canvas width=1000 height=680 id="can" hidden="true"></canvas>
+				<div id="initWidow">
+					<button onclick="addPlayer()">Add player!</button>
+					<button onclick="players.splice(players.length-1,1)">Remove player!</button>
+					<br><img src="assets/keys.jpg">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="assets/gameAreas.js"></script>
+	<script>
+		let gameArea = document.getElementById("can");
+		let initWidow = document.getElementById("initWidow");
+		let initForm = document.getElementById("Players");
+		let body = document.querySelector("body");
+		let ctx = gameArea.getContext("2d");
+		ctx.imageSmoothingEnabled = false;
+		ctx.webkitImageSmoothingEnabled = false;
+		let init = false;
+		let output = document.querySelector("form");
+		let bgColor = "#4283f3";
+		let players = [];
+		let grounds = [];
+		let bullets = [];
+		ctx.fillStyle = bgColor;
+		ctx.fillRect(0,0,gameArea.clientWidth,gameArea.clientHeight);
+
+		// INPUT MULTIPLE KEYS
+		inputKeys = [];
+		
+		body.addEventListener("keydown", function(e) {
+			if (!inputKeys.includes(e.key)) {
+				inputKeys.push(e.key);
+			}
+		});
+		body.addEventListener("keyup", function(e) {
+			while (inputKeys.includes(e.key)) {
+				for (i=0;i<inputKeys.length;i++) {
+					if (inputKeys[i] == e.key) {
+						inputKeys.splice(i,1);
+						break;
+					}
+				}
+			}
+		});
+		gameArea.addEventListener("mousemove", function(e) {
+			output.x.value = e.offsetX;
+			output.y.value = e.offsetY;
+		});
+		// END INPUT :)
+		playerKeys = [
+			{
+				left:"a",
+				right:"d",
+				jump:"w",
+				attack:"s"
+			},
+			{
+				left:"ArrowLeft",
+				right:"ArrowRight",
+				jump:"ArrowUp",
+				attack:"ArrowDown"
+			},
+			{
+				left:"j",
+				right:"l",
+				jump:"i",
+				attack:"k"
+			},
+			{
+				left:"f",
+				right:"h",
+				jump:"t",
+				attack:"g"
+			}
+		]
+		characters = [
+			"konqi",
+			"nun",
+			"ero",
+			"dres"
+		]
+
+		class Player {
+			constructor(spawnX,spawnY,assetDir,inputDef) {
+				this.x = spawnX;
+				this.y = spawnY;
+				this.respx = spawnPoints[0][rr(0,spawnPoints[0].length-1)];
+				this.respy = spawnPoints[0][rr(0,spawnPoints[0].length-1)];
+				this.width = 23;
+				this.height = 33;
+				this.img = new Image();
+				this.dir = "assets/"+assetDir +"/";
+				this.state = "standby";
+				this.direction = "right";
+				this.hitCords = [];
+				this.inputDef = inputDef;
+				this.jump = 0;
+				this.fall = 0;
+				this.kills = 0;
+				this.deaths = 0;
+				this.air = false;
+				this.bullets = [];
+				this.canShoot = true;
+				this.jumpCurve = [22,20,19,16,13,12,11,10,9,8].reverse();
+				this.fallCurve = [22,20,19,16,13,12,11,10,9,8];
+				this.id = players.length;
+				this.maxBullets = 5;
+			}
+			print() {
+				let tImg = this.dir + this.state + "-" + this.direction + ".png";
+				this.img.src = tImg;
+				ctx.drawImage(this.img,this.x,this.y);
+			}
+			updateCords() {
+				this.hitCords = [];
+				for (let i=0;i<this.width;i++) {
+					for (let j=0;j<this.height;j++) {
+						this.hitCords.push([i+this.x,j+this.y]);
+					}
+				}
+			}
+			respawn() {
+				let tsp = spawnPoints[0][rr(0,spawnPoints[0].length-1)];
+				this.x = tsp.x;
+				this.y = tsp.y;
+				this.bullets = [];
+			}
+			shoot() {
+				if (this.direction == "left") {
+					this.bullets.push(new Bullet(this.x-20,this.y,this.direction,this.id,this.dir));
+				} else {
+					this.bullets.push(new Bullet(this.x+20,this.y,this.direction,this.id,this.dir));
+				}
+				//this.bullets.push(new Bullet(this.x,this.y,this.direction,this.id,this.dir));
+				this.canShoot = false;
+				this.state = "attack";
+			}
+			move() {
+				if (inputKeys.includes(this.inputDef.left) && this.x > 10) {
+					this.x -= 10;
+					this.direction = "left";
+				}
+				if (inputKeys.includes(this.inputDef.right) && this.x < gameArea.width-this.width-10) {
+					this.x += 10;
+					this.direction = "right";
+				}
+				if (inputKeys.includes(this.inputDef.right) || inputKeys.includes(this.inputDef.left)) {
+					this.state = "walking";
+				} else {
+					if (this.state == "attack") {
+						setTimeout(function() {
+							this.state = "standby";
+						},100);
+						this.state = "standby"
+					} else {
+						this.state = "standby";
+					}
+				}
+				if (this.jump>0) { // hop
+					this.jump--;
+					this.y -= this.jumpCurve[this.jump];
+					this.air = true;
+				} else if (this.jump == 0 && inputKeys.includes(this.inputDef.jump) && !this.air) { // initiate hop
+					this.jump = 10;
+					this.fall = 10;
+				} else if (this.jump == 0 && !this.touchGround()) { // gravity
+					this.y += 15;
+					this.air = true
+				}
+				if (this.touchGround()) {
+					this.air = false;
+					this.y = this.touchGround(true)[1].y+3-this.height;
+				}
+				if (inputKeys.includes(this.inputDef.attack) && this.canShoot && this.bullets.length < this.maxBullets) {
+					this.shoot();
+					this.canShoot = false;
+				} else {
+					this.canShoot = true;
+				}
+				if (this.y > gameArea.height) {
+					this.y = 0;
+				}
+
+				//this.updateCords();
+				this.print();
+			}
+			touchGround(returnBlock) {
+				for (let i=0;i<grounds.length;i++) { // all grounds
+					if (isBetween(this.x, grounds[i].x,grounds[i].x+grounds[i].width) || isBetween(this.x+this.width, grounds[i].x,grounds[i].x+grounds[i].width)) {
+						if (isBetween(this.y+this.height, grounds[i].y, grounds[i].y+grounds[i].height)) {
+							if (returnBlock) {
+								return [true,grounds[i]];
+							}
+							return true;
+						}
+					}
+				}
+				return false;
+			}
+
+		}
+		class Bullet {
+			constructor(spawnX,spawnY,direction,id,dir) {
+				this.x = spawnX;
+				this.y = spawnY;
+				this.direction = direction;
+				this.id = id;
+				this.dir = dir;
+				this.speed = rr(3,6);
+			}
+			move() {
+				if (this.direction == "left") {
+					this.x -= this.speed;
+				} else {
+					this.x += this.speed;
+				}
+				this.print();
+				this.hitsPlayer();
+				this.touchesGround();
+			}
+			print() {
+				//ctx.fillStyle = "red";
+				//ctx.fillRect(this.x,this.y,10,10);
+				let tImg = this.dir + "pp-" + this.direction + ".png";
+				let bimg = new Image;
+				bimg.src = tImg;
+				ctx.drawImage(bimg,this.x,this.y,30,30);
+			}
+			remove() {
+				players[this.id].bullets.splice(players[this.id].bullets.indexOf(this),1);
+			}
+			hitsPlayer() {
+				for (let bi = 0; bi < players.length; bi++) {
+					if (players[bi].id != this.id) {
+						if (isBetween(this.y,players[bi].y-30,players[bi].y+players[bi].height) && isBetween(this.x,players[bi].x-2,players[bi].x+players[bi].width)) {	
+							kill(players[bi].id,this.id);
+							players[this.id].bullets.splice(players[this.id].bullets.indexOf(this),1);
+							return players[bi].id;
+						}
+					}
+				}
+				return false;
+			}
+			touchesGround() {
+				for (let tg = 0; tg < grounds.length; tg++) {
+					if (isBetween(this.x-4,grounds[tg].x,grounds[tg].x+grounds[tg].width) || isBetween(this.x+28,grounds[tg].x,grounds[tg].x+grounds[tg].width)) {
+						if (isBetween(this.y-1,grounds[tg].y,grounds[tg].y+grounds[tg].height) || isBetween(this.y+30,grounds[tg].y,grounds[tg].y+grounds[tg].height)) {
+							this.remove();
+						}
+					}
+				}
+			}
+		}
+		class Ground {
+			constructor(x,y,width,height,color) {
+				this.x = x;
+				this.y = y;
+				this.height = height;
+				this.width = width;
+				this.color = color;
+				this.pixelCords = [];
+			}
+			updateCords() { // GET ALL PIXEL DATA, IN SOME CASES FEW THOUSANDS OF PIXELS WHICH EASILY BECOMES MILLIONS, NOT RECOMMENDED FOR HITBOXES, -	ME
+				for (let i=0;i<this.width;i++) {
+					for (let j=0;j<this.height;j++) {
+						this.pixelCords.push([i+this.x,j+this.y]);
+					}
+				}
+			}
+			print() {
+				if (this.color == undefined) {
+					ctx.fillStyle = "green";
+				} else {
+					ctx.fillStyle = this.color;
+				}
+				ctx.fillRect(this.x,this.y,this.width,this.height);
+			}
+		}
+		class spawnPoint {
+			constructor(x,y) {
+				this.x = x;
+				this.y = y;
+			}
+		}
+		function addSpawnPoint() {
+			spawnPoints.push(new spawnPoint(players[0].x,players[0].y));
+		}
+		function isBetween(ab,start,end) {
+			if (ab > start && ab < end) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		function rr(min, max) {
+  			return Math.floor(Math.random() * (max - min + 1) ) + min;
+		}
+		function createPlayer(x,y,character,keymap) {
+			if (Array.isArray(keymap)) {
+				let temp = {
+						left:keymap[0],
+						right:keymap[1],
+						jump:keymap[2],
+						attack:keymap[3]
+					}
+				
+				players.push(new Player(x,y,character,temp));
+			} else {
+				players.push(new Player(x,y,character,keymap));
+			}
+		}
+		function addPlayer() {
+			if (players.length < playerKeys.length && players.length < characters.length) {
+				createPlayer(rr(50,gameArea.width-50),50,characters[players.length],playerKeys[players.length]);
+				return ("Player " + players.length + " added!");
+			} else {
+				return "Too many players";
+			}
+		}
+		function createBlock(x1,y1,w1,h1,c1) {
+			grounds.push(new Ground(x1,y1,w1,h1,c1));
+		}
+		function removeLastBlock() {
+			grounds.splice(grounds.length-1, 1);
+		}
+		function kill(p,p1) {
+			//console.log(p);
+			players[p1].kills++
+			players[p].deaths++;
+			players[p].respawn();
+			//respawnAllPlayers();
+		}
+		function respawnAllPlayers() {
+			for(i=0;i<players.length;i++) {
+				players[i].respawn();
+			}
+		}
+		function createGameArea() {
+			createBlock(0,350,300,20,"green");
+			createBlock(600,260,200,20,"green");
+			createBlock(600,400,280,20,"green");
+			createBlock(100,220,400,20,"green");
+			createBlock(300,600,400,20,"green");
+			createBlock(100,520,80,20,"green");
+			createBlock(0,440,80,20,"green");
+
+		}
+		function getGameAreaString() {
+			return JSON.stringify(grounds);
+		}
+		function loadGameAreaFromString(jjj) {
+			groundsTemp = JSON.parse(jjj);
+			grounds = [];
+			for (i=0; i < groundsTemp.length; i++) {
+				let cblock = groundsTemp[i];
+				createBlock(cblock.x,cblock.y,cblock.width,cblock.height,cblock.color);
+			}
+		}
+		function printScoreBoard() {
+			ctx.font = "15px Arial";
+			//ctx.fillText("Hello World", 1, 16);
+			for (i=0;i<players.length;i++) {
+				let txtt = "Player " + players[i].id + ": " + players[i].kills;
+				ctx.fillText(txtt, 1, 16*(i+1));
+			}
+		}
+		
+		createGameArea();
+		inputLoop = setInterval(function() {
+			ctx.fillStyle = bgColor;
+			ctx.fillRect(0,0,gameArea.clientWidth,gameArea.clientHeight); // FILL BG
+			
+			for (i1=0;i1<grounds.length;i1++) {
+				grounds[i1].print();
+			}
+			for (i1=0;i1<players.length;i1++) {
+				players[i1].move();
+			}
+			ctx.fillStyle ="white";
+			printScoreBoard();
+		},50);
+		bulletLoop = setInterval(function(){
+			for (i2=0;i2<players.length;i2++) {
+				if (players[i2].bullets.length > 0) {
+					for (ib = 0; ib < players[i2].bullets.length; ib++) {
+						if (players[i2].bullets[ib] != undefined) {
+							if (!isBetween(players[i2].bullets[ib].x, 0,gameArea.width)) {
+								players[i2].bullets.splice(ib,1);
+							} else {
+								players[i2].bullets[ib].move();
+							}
+							
+						}
+					}
+				}
+			}
+		},10);
+		function switchInit() {
+			if (init) {
+				init = false;
+			} else {
+				init = true;
+			}
+			if (init) {
+				gameArea.hidden = true;
+				initWidow.hidden = false;
+			} else {
+				gameArea.hidden = false;
+				initWidow.hidden = true;
+			}
+		}
+		window.onload = function() {
+		loadGameAreaFromString(gameAreas[0]);
+			if (init) {
+				gameArea.hidden = true;
+				initWidow.hidden = false;
+			} else {
+				gameArea.hidden = false;
+				initWidow.hidden = true;
+				addPlayer();
+				addPlayer();
+				respawnAllPlayers();
+			}
+		}
+		
+
+	</script>
+	<noscript>
+		Bro u no do java hahah
+	</noscript>
+</html>

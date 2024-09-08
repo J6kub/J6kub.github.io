@@ -1,0 +1,29 @@
+body {
+	background-color:#4283f3;
+}
+.main {
+	display: block;
+}
+.main h1 {
+	text-align: center;
+}
+#can {
+	
+}
+#gameWindow {
+	display:inline-block;
+	position: absolute;
+	left: 50%;
+	width:1000;
+	height:680;
+	transform: translate(-50%,0);
+	border:2px solid #4c61ef;
+	color:white;
+}
+#initWidow button {
+	font-size:32;
+	padding:10;
+}
+#initWidow img {
+	width:1000;
+}
