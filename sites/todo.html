@@ -4,6 +4,50 @@
 		<h1>Cookie to do list!</h1>
 	</head>
 	<body>
-		
+		<h3><input type='text' id="addLineTxt"></input><button onclick='addLine()'>add</button>
+		<div id='lists'></div>
 	</body>
+	<script>
+		let toDos = [];
+		let hli = document.getElementById('lists');
+		let newInp = document.getElementById('addLineTxt');
+		class line {
+			constructor(txt,boo) {
+				let lim = document.createElement('input')
+				lim.type = 'checkbox'
+				lim.checked = boo;
+				
+				let li = document.createElement('li')
+				li.appendChild(lim)
+				li.innerHTML += txt;
+				this.html = li;
+			}
+		}
+		function addLine() {
+			toDos.push(new line(newInp.value, false));
+			newInp.value = "";
+			hli.innerHTML = '';
+			toDos.forEach(printHtml);
+		}
+		function save() {
+			document.cookie = ( "'" + "toDos=" + JSON.stringify(toDos) + "'");
+		}
+		
+		function printHtml(item,index) { 
+			hli.appendChild(item.html)
+		}
+		
+		if (document.cookie != '') {
+			
+		}
+		
+		
+		toDos.forEach(printHtml)
+		
+	</script>
+	<style>
+		li {
+			text-decoration:none;
+		}
+	</style>
 </html>
