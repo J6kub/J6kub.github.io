@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Import 3D Scene</title>
+    <title>Edge Shader Example</title>
     <style>
         body { margin: 0; }
         canvas { display: block; }
@@ -27,15 +27,53 @@
 
         // Load .glb file
         const loader = new THREE.GLTFLoader();
-        loader.load('roomy.glb', function (gltf) {
-            scene.add(gltf.scene);
+        loader.load('path/to/your/model.glb', function (gltf) {
+            const model = gltf.scene;
+            scene.add(model);
+
+            // Edge detection shader
+            const edgeShader = {
+                vertexShader: `
+                    varying vec3 vNormal;
+                    void main() {
+                        vNormal = normalize(normalMatrix * normal);
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                    }
+                `,
+                fragmentShader: `
+                    varying vec3 vNormal;
+                    void main() {
+                        float edge = dot(vNormal, vec3(0.0, 0.0, 1.0));
+                        edge = 1.0 - edge;
+                        gl_FragColor = vec4(vec3(edge), 1.0);
+                    }
+                `
+            };
+
+            const edgeMaterial = new THREE.ShaderMaterial({
+                vertexShader: edgeShader.vertexShader,
+                fragmentShader: edgeShader.fragmentShader,
+                side: THREE.BackSide
+            });
+
+            model.traverse((child) => {
+                if (child.isMesh) {
+                    const edges = new THREE.EdgesGeometry(child.geometry);
+                    const edgeMesh = new THREE.LineSegments(edges, edgeMaterial);
+                    scene.add(edgeMesh);
+                }
+            });
+
             renderer.render(scene, camera);
         }, undefined, function (error) {
             console.error(error);
         });
 
         // Camera position
-        camera.position.z = 5;
+        camera.position.z = 1;
+		camera.position.y = 0.5;
+		
+		camera.rotation.x = -0.3
 
         // Animation loop
         function animate() {
