@@ -20,6 +20,11 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
+        // Add light
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(5, 5, 5).normalize();
+        scene.add(light);
+
         // Load .glb file
         const loader = new THREE.GLTFLoader();
         loader.load('roomy.glb', function (gltf) {
