@@ -27,6 +27,7 @@
 
         // Load .glb file
         const loader = new THREE.GLTFLoader();
+        let mixer;
         loader.load('roomy-anim.glb', function (gltf) {
             const model = gltf.scene;
             scene.add(model);
@@ -64,6 +65,12 @@
                 }
             });
 
+            // Animation setup
+            mixer = new THREE.AnimationMixer(model);
+            gltf.animations.forEach((clip) => {
+                mixer.clipAction(clip).setLoop(THREE.LoopRepeat).play();
+            });
+
             renderer.render(scene, camera);
         }, undefined, function (error) {
             console.error(error);
@@ -71,13 +78,13 @@
 
         // Camera position
         camera.position.z = 1;
-		camera.position.y = 0.5;
-		
-		camera.rotation.x = -0.3
+        camera.position.y = 0.5;
+        camera.rotation.x = -0.3;
 
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
+            if (mixer) mixer.update(0.01);
             renderer.render(scene, camera);
         }
         animate();
