@@ -1,61 +1,41 @@
-<ht	ml>
+<html>
 	<head>
-		<meta charset-'utf-8'>
-		<link rel='stylesheet' href='index.css'>
-		<link rel="icon" href="icon.ico" type="image/x-icon">
-		<title>Jakub Broz</title>
+		<link rel='stylesheet' href='assets/css/index.css'>
 	</head>
 	<body>
-		<center><h1>Min IS-114 portfolio</h1><br></center>
-		<div class='boxies'>
-			<div class='boxy' id='info'>
-				<p>
-					Her kommer det løsninger på oppgavene mine i IT
-				</p>
-			</div>
-			<div class='boxy' id='info'>
-				<p>
-					Det er et text
-				</p>
-				<img src="https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_700/MTk2NzY3MjA5ODc0MjY5ODI2/top-10-cutest-cat-photos-of-all-time.webp">
-				<p style='font-size:15px;text-align:center;'>Det er et bilde</p>
-			</div>
-			<div class='boxy' id='info'>
-				<p>
-					Her er en liten tutorial på github:<br>
-					1. Lagre filen som du endra.<br>
-					2. git add --all<br>
-					3. git commit -m "Hello world"<br>
-					4. git push<br>
-					5. Yay
-				</p> 
-			</div>
-			<div class='boxy' id='info'>
-				<p>
-					Andre viktige greier i konsollen<br>
-					<li>cd ..</li>
-					<li>pwd</li>
-					<li>ls</li>
-					Ja det var nok det!
-				</p> 
-			</div>
-			<div class='boxy' id='info'>
-				<p>
-					Git branches<br>
-					<li>Git checkout -b "navn"</li>
-					<li>Git switch -</li>
-					<li>git branch -d "navn"</li>
-				</p> 
-			</div>
-			<div class='boxy' id='info'>
-				<p>
-					Potatogun 2d<br>
-					<p> Min liten prosjekt fra VGS </p>
-					<a href="sites/PotatoGun2d/game.html"><button>Spill her</button></a>
-				</p> 
+		<div class='boxy' id='intro'>
+			<div class='mid_bx'>
+				<p class='bhg'><b>Kubonk</b></p>
 			</div>
 		</div>
+		<div class='boxy' id='bio'>
+			<div class='mid_bx'>
+				<p class='bhg'>Very good<br>
+				Much programming<br>
+				Line line</p>
+			</div>
+		</div>
+		<div class='boxy'>
+			<div class='mid_bx'>
+				<p class='bhg'>This slide includes a pop-up window!<br><br>
+				<b onclick=' pop_up_visibilize(this)' id="bx3_poppy" style="border:2px solid black;border-radius:15px;padding:10px;cursor:pointer;">Click for pop-up!</b></p>
+			</div>
+			<div class='pop_up' draggable='true'>
+				<button onclick="this.parentElement.hidden = 'true'">X</button>
+				<p>Potatoes</p>
+			</div>
+			<div class='pop_up' draggable='true'>
+				<button onclick="this.parentElement.hidden = 'true'">X</button>
+				<p>Potatoes2</p>
+			</div>
+		</div>
+		<div class='boxy'></div>
+		<div class='boxy'></div>
+		<div class='boxy'></div>
+		<div class='boxy'></div>
+		<div class='boxy'></div>
+		<div class='boxy'></div>
+		
 	</body>
-	<div id='background'></div>
-	<script src='index.js'>
+	<script src='assets/js/index.js'></script>
 </html>
