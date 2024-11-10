@@ -20,13 +20,16 @@ boxes.forEach(function(elm, i) {
     //elm.innerHTML = "<h1>This is slide nr. " + i + "</h1>" + elm.innerHTML;
 });
 pop_ups.forEach(function(elm,i){
+	elm.dragLimit = 0;
 	elm.addEventListener('drag',function(evt){
-		console.log(evt);
-		if (evt.pageY > 0 && evt.pageX > 0) {
+		//console.log(evt);
+		if (evt.pageY > 0 && evt.pageX > 0 && elm.draggable) {
 			elm.style.top = evt.pageY;
 			elm.style.left = evt.pageX;
 		}
+		elm.dragLimit += 1
 	})
+	
 })
 
 body.addEventListener('wheel', function(event) {
@@ -56,7 +59,7 @@ function visiblify(elm, at) {
 		elm.style.zIndex = 0;
 	}
 }
-function pop_up_visibilize(elm) {
+function pop_up_visibilize(elm) {		// pop_up_visibilize(this) to show popups from window
 	let pops = Array.from(elm.closest('.boxy').getElementsByClassName('pop_up'));
 	console.log(pops);
 	for (let i=0; i < pops.length; i++) {
@@ -71,3 +74,24 @@ function pop_up_visibilize(elm) {
 		}
 	}
 }
+
+let lmt_pop = document.getElementById('limited_pop')
+lmt_pop.addEventListener('drag',function(e){
+	console.log(this.dragLimit)
+	if (this.dragLimit > 100) {
+		console.log(this.draggable)
+		this.draggable = false;
+		const dragStopEvent = new Event('dragstop');
+        this.dispatchEvent(dragStopEvent)
+		let limit_up = this.closest('.boxy').getElementsByClassName('pop_up')[1];
+		limit_up.hidden = '';
+		limit_up.draggable = false;
+		this.style.cursor = 'not-allowed;'
+	}
+});
+lmt_pop.addEventListener("click",function(){
+	if (!this.draggable) {
+		let limit_up = this.closest('.boxy').getElementsByClassName('pop_up')[1];
+		limit_up.hidden = '';
+	}
+})
