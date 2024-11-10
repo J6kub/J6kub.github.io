@@ -95,3 +95,26 @@ lmt_pop.addEventListener("click",function(){
 		limit_up.hidden = '';
 	}
 })
+
+clr_sel = document.getElementById('clr_sel');
+function clr_sel_updt() {
+	thisEl = clr_sel
+	thisEl.style.backgroundColor = thisEl.value;
+	function rpc(hex) {
+		hex = hex.replace(/^#/, '');
+		// Parse the hex values
+		let bigint = parseInt(hex, 16);
+		
+		// Extract RGB components
+		let r = (bigint >> 16) & 255;
+		let g = (bigint >> 8) & 255;
+		let b = bigint & 255;
+		
+		// Return the RGB values as an object
+		return [ -r + 255, -g + 255, -b + 255 ];
+	}
+	thisEl.parentElement.style.color = 'rgb(' + rpc(thisEl.value) + ")";
+	thisEl.style.backgroundColor = 'rgb(' + rpc(thisEl.value) + ")";
+	thisEl.closest('.boxy').style.backgroundColor = thisEl.value;
+}
+clr_sel.addEventListener("input",clr_sel_updt);

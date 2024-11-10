@@ -76,6 +76,12 @@
 	
 }
 
+#clr_sel {
+	width:100px;
+	height:60px;
+	background-color:black;
+}
+
 body {
 	overflow:hidden;
 }
