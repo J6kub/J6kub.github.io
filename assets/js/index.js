@@ -1,6 +1,11 @@
 const body = document.querySelector('body');
 const minY = 250
 let yPos = minY;
+
+function rr(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
 const colors = [
     "#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD",
     "#E74C3C", "#3498DB", "#2ECC71", "#F39C12", "#D35400",
@@ -59,6 +64,9 @@ function pop_up_visibilize(elm) {
 		console.log(curr);
 		if (curr) {
 			pops[i].hidden = '';
+			let p = pops[i];
+			pops[i].style.left = rr(p.clientWidth/2,window.innerWidth)
+			pops[i].style.top = rr(p.clientHeight/2,window.innerHeight)
 			break;
 		}
 	}

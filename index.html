@@ -5,7 +5,9 @@
 	<body>
 		<div class='boxy' id='intro'>
 			<div class='mid_bx'>
-				<p class='bhg'><b>Kubonk</b></p>
+				<p class='bhg'><b>Kubonk</b><br>
+				<i style='font-size:18px;'>You may scroll down now</i></p>
+				
 			</div>
 		</div>
 		<div class='boxy' id='bio'>
@@ -20,16 +22,23 @@
 				<p class='bhg'>This slide includes a pop-up window!<br><br>
 				<b onclick=' pop_up_visibilize(this)' id="bx3_poppy" style="border:2px solid black;border-radius:15px;padding:10px;cursor:pointer;">Click for pop-up!</b></p>
 			</div>
-			<div class='pop_up' draggable='true'>
+			<div class='pop_up' draggable='true' hidden='true'>
 				<button onclick="this.parentElement.hidden = 'true'">X</button>
 				<p>Potatoes</p>
 			</div>
-			<div class='pop_up' draggable='true'>
+			<div class='pop_up' draggable='true' hidden='true'>
 				<button onclick="this.parentElement.hidden = 'true'">X</button>
+				<h3>Title</h3>
 				<p>Potatoes2</p>
 			</div>
 		</div>
-		<div class='boxy'></div>
+		<div class='boxy'>
+			<div class='mid_bx'>
+				<p class='bhg'>This slide has perfectly contrasted color of<br>
+				text depending on background!
+				<br>
+			</div>
+		</div>
 		<div class='boxy'></div>
 		<div class='boxy'></div>
 		<div class='boxy'></div>
