@@ -78,7 +78,7 @@ function pop_up_visibilize(elm) {		// pop_up_visibilize(this) to show popups fro
 let lmt_pop = document.getElementById('limited_pop')
 lmt_pop.addEventListener('drag',function(e){
 	console.log(this.dragLimit)
-	if (this.dragLimit > 100) {
+	if (this.dragLimit > 300) {
 		console.log(this.draggable)
 		this.draggable = false;
 		const dragStopEvent = new Event('dragstop');
@@ -98,7 +98,7 @@ lmt_pop.addEventListener("click",function(){
 
 clr_sel = document.getElementById('clr_sel');
 function clr_sel_updt() {
-	thisEl = clr_sel
+	thisEl = clr_sel;
 	thisEl.style.backgroundColor = thisEl.value;
 	function rpc(hex) {
 		hex = hex.replace(/^#/, '');
