@@ -40,7 +40,7 @@ function setButtonHeight() {
 window.onresize = setButtonHeight;
 
 window.onload = function() {
-	setButtonHeight()
+	setButtonHeight
     var theme = getCookie("theme");
     var themeLink = document.getElementById("theme-link");
     if (theme === "dark") {
