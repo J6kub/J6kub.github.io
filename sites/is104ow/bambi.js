@@ -39,5 +39,5 @@ window.onload = function() {
         themeLink.setAttribute("href", "style.css");
     }
 };
-header.onload = setButtonHeight;
+header.onload = setTimeout(setButtonHeight,100);
 
