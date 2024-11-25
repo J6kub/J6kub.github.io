@@ -22,8 +22,8 @@ window.onload = function() {
         themeLink.setAttribute("href", currentTheme.includes("style_dark.css") ? currentTheme.replace("style_dark.css", "style.css") : currentTheme);
     }
 };
+var header = document.querySelector('header');
 function setButtonHeight() {
-    var header = document.querySelector('header');
     var backButton = document.getElementById('back');
     backButton.style.height = header.offsetHeight + 'px';
 }
@@ -39,4 +39,5 @@ window.onload = function() {
         themeLink.setAttribute("href", "style.css");
     }
 };
-window.onload = setButtonHeight;
+header.onload = setButtonHeight;
+
