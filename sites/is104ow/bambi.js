@@ -31,8 +31,16 @@ function switchTheme() {
         setCookie("theme", "light", 7);
     }
 }
+function setButtonHeight() {
+    var header = document.querySelector('header');
+    var backButton = document.getElementById('back');
+    backButton.style.height = header.offsetHeight + 'px';
+}
+
+window.onresize = setButtonHeight;
 
 window.onload = function() {
+	setButtonHeight()
     var theme = getCookie("theme");
     var themeLink = document.getElementById("theme-link");
     if (theme === "dark") {
