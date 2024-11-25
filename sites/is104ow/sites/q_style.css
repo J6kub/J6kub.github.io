@@ -80,5 +80,6 @@ button:hover {
 }
 
 #back:hover {
-	background-color:#71b8ff
+	background-color:#71b8ff;
+	transform: scale(1) !important;
 }
