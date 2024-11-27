@@ -40,4 +40,5 @@ window.onload = function() {
     }
 };
 header.onload = setTimeout(setButtonHeight,100);
-document.onmousemove = setButtonHeight;
+document.onload = function() {document.onmousemove = setButtonHeight;}
+
