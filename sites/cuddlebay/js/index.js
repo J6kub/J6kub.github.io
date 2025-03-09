@@ -7,5 +7,5 @@ function switchTo(toDisp) {
 }
 
 window.onload = function() {
-	switchTo('main');
+	switchTo('abtme');
 }
