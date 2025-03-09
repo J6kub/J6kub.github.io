@@ -8,4 +8,5 @@ function switchTo(toDisp) {
 
 window.onload = function() {
 	switchTo('abtme');
+	console.log('potato');
 }
