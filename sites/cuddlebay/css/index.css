@@ -9,6 +9,7 @@ body {
 header img {
 	width:180;
 	display:inline-block;
+	float:right;
 }
 header text {
 	display:inline-block;
