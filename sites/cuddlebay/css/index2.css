@@ -1,9 +1,14 @@
 body {
 	background-image: linear-gradient(beige, #a7a78b);
 	font-family: 'Gill Sans MT', sans-serif;
-	background-image:url('../bg.png');
+	background-image:url('../bg2.png');
 	background-size:cover;
 	background-repeat:no-repeat;
+}
+.bgs {
+	position:fixed;
+	top:0;
+	left:0;
 }
 
 header img {

@@ -41,7 +41,10 @@ function footifyTheFooter(hh) {
 	}
 }
 
-
+function bgSel(bg) {
+	let body = document.querySelector('body');
+	body.style.backgroundImage = "url('"+bg+"')"
+}
 
 
 window.onload = function() {
