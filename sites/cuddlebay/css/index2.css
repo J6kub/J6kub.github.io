@@ -142,10 +142,10 @@ nav {
 
 
 footer {
-  position: relative;
+  position: absolute;
   margin:0;
   left: 0;
-  bottom: 0;
+
   width: 100%;
   background-color: #7d7d62;
   color: white;

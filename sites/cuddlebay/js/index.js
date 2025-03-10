@@ -10,6 +10,7 @@ function switchTo(toDisp) {
 		topReplace(true);
 	}
 	document.getElementById(toDisp).style.display = "block";
+	footifyTheFooter(document.getElementById(toDisp).clientHeight);
 }
 function navigationDeletation(booly) {
 	let nav = document.querySelector("nav");
@@ -25,6 +26,21 @@ function topReplace(booly) {
 	} else {
 		toppex.innerHTML = '<text style="font-size:128">Cuddle Bay</text>';
 	}
+}
+
+function footifyTheFooter(hh) {
+	let body = document.querySelector('body');
+	let footer = document.querySelector('footer');
+	let header = document.querySelector('header').clientHeight;
+	let nav = document.querySelector('nav').clientHeight;
+	let kok = hh + header + nav;
+	if ( body.clientHeight > kok) {
+		footer.style.top = body.clientHeight - footer.clientHeight;
+	} else {
+		footer.style.top = kok + 10;
+	}
+	
+	
 }
 
 
