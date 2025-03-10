@@ -46,5 +46,5 @@ function footifyTheFooter(hh) {
 
 window.onload = function() {
 	switchTo('main');
-	console.log('potato');
+	console.log('potato1');
 }
