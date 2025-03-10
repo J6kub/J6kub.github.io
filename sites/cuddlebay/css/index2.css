@@ -42,8 +42,10 @@ nav {
 	float:right;
 }
 #main button {
-	margin-bottom: 1.5em;
+
+	margin-top:1.2em;
 	font-size:1.3em;
+	width:220px;
 }
 .assy {
 	font-size:1em;
