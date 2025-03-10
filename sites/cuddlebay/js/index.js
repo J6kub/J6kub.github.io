@@ -39,8 +39,6 @@ function footifyTheFooter(hh) {
 	} else {
 		footer.style.top = kok + 10;
 	}
-	
-	
 }
 
 

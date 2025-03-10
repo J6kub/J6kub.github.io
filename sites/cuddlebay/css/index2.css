@@ -1,9 +1,9 @@
 body {
 	background-image: linear-gradient(beige, #a7a78b);
 	font-family: 'Gill Sans MT', sans-serif;
-	
+	background-image:url('../bg.png');
 	background-size:cover;
-	background-repeat:false;
+	background-repeat:no-repeat;
 }
 
 header img {
@@ -64,11 +64,13 @@ nav {
 
 .nb {
 	background-color:rgba(0,0,0,0.2);
-	padding:15;
+	padding:10;
 	font-size:20;
+	margin-top:0.5em;
 	border: none;
 	border-radius:15px;
 	transition:background-color 0.3s;
+	width:220;
 }
 .nb:hover {
 	background-color:rgba(0,0,0,0.4);
@@ -142,14 +144,14 @@ nav {
 
 
 footer {
-  position: absolute;
-  margin:0;
-  left: 0;
+	position: absolute;
+	margin:0;
+	left: 0;
 
-  width: 100%;
-  background-color: #7d7d62;
-  color: white;
-  text-align: center;
+	width: 100%;
+	background-color: #d3d3a5;
+	color: block;
+	text-align: center;
 }
 
 #main img {
