@@ -1,6 +1,6 @@
 body {
 	background-image: linear-gradient(beige, #a7a78b);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Gill Sans MT', sans-serif;
 	
 	background-size:cover;
 	background-repeat:false;
@@ -26,6 +26,30 @@ header table {
 nav {
 	
 }
+#main {
+	
+}
+#main table {
+	width:1200px;
+	left:50%;
+	font-size:0.8em;
+	position:relative;
+	transform:translate(-50%,0);
+	display:inline-block;
+	padding:0;
+}
+.butt-cont {
+	float:right;
+}
+#main button {
+	margin-bottom: 1.5em;
+	font-size:1.3em;
+}
+.assy {
+	font-size:1em;
+	display:block;
+}
+
 #areabb img {
 	max-height: 20px;
 	top:3px;
