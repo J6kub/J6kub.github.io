@@ -48,8 +48,10 @@ nav ul li a {
 }
 
 .slideshow-container {
-    width: 50%;
+    
     max-width: 600px;
+	height:500px;
+	aspect-ratio:2316/3088;
     overflow: hidden;
     position: relative;
     border-radius: 8px;
@@ -62,7 +64,8 @@ nav ul li a {
 }
 
 .slideshow img {
-    width: 100%;
+    max-width: 100%;
+	aspect-ratio:2316/3088;
     flex-shrink: 0;
 }
 
@@ -109,7 +112,7 @@ nav ul li a {
 	font-size:1.9em;
 }
 .infotainer p {
-	font-size:1.8em;
+	font-size:1.5em;
 	text-wrap:wrap;
 	width:730px;
 }
@@ -131,21 +134,24 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 0px 20px;
+	max-height:200px;
     background-color: var(--primary-color);
     color: white;
 }
 header h1 {
 	float:inline-end;
 	display:inline;
-	font-size:80px;
-	margin:60px;
+	font-size:40px;
+	margin-top:30px;
+	margin-left:25px;
+	margin-right:115px;
 }
 .logo {
-    height: 200px; /* Match header height */
+    height: 100px; /* Match header height */
     max-height: 300px;
 	display:inline;
-	--lm: 20px;
+	--lm: 0px;
 	margin-left:var(--lm);
 	margin-right:var(--lm);
 }
