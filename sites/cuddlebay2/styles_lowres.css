@@ -1,189 +1,47 @@
-:root {
-    --primary-color: #9db8ba;
-    --secondary-color: #ff732d;
-    --background-color: #f8f8f8;
-	--backy-color:beige;
-}
+/* Overwritten Styles from the second CSS file */
 
+/* Body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-	background-color:var(--backy-color);
-	font-family: 'Gill Sans MT', sans-serif;
+
 }
 
+/* Header */
 header {
-    background-color: var(--primary-color);
-    padding: 20px;
-    color: white;
+    padding: 00px 0px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+/* Header H1 */
+header h1 {
+    font-size: 40px;
+	margin:0;
+	margin-top:25px;
+	margin-right:145px;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+/* Logo */
+.logo {
+    height: 100px; /* Corrected to 100px */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-	font-size:1.2em;
-}
-.langB {
-	font-size:0.85em;
-}
-
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-}
-
+/* Slideshow Container */
 .slideshow-container {
-    
-    max-width: 600px;
+    width:400px;
 	height:500px;
-	aspect-ratio:2316/3088;
-    overflow: hidden;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+	
 }
 
-.slideshow {
-    display: flex;
-    transition: transform 1s ease-in-out;
+/* Infotainer Paragraph */
+.infotainer p {
+    font-size: 1.3em;
 }
 
+/* Slideshow Image */
 .slideshow img {
     max-width: 100%;
 	aspect-ratio:2316/3088;
     flex-shrink: 0;
+	height:100%;
 }
-
-.button-container {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-	justify-content:space-evenly;
-	
-	
-}
-
-.button-container button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-	flex-grow:4;
-	font-size:1.5em;
-    transition: background-color 0.3s;
-	
-}
-
-.button-container button:hover {
-    background-color: var(--secondary-color);
-}
-.info-button-container {
-	margin-left:10px;
-}
-.infotainer {
-	
-}
-.infotainer {
-	
-}
-.infotainer h2 {
-	font-size:2.4em;
-}
-.infotainer h3 {
-	font-size:1.9em;
-}
-.infotainer p {
-	font-size:1.5em;
-	text-wrap:wrap;
-	width:730px;
-}
-
-.service-box {
-    margin: 20px;
-    padding: 20px;
-    background-color: var(--background-color);
-    border-radius: 8px;
-}
-
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-}
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 20px;
-	max-height:200px;
-    background-color: var(--primary-color);
-    color: white;
-}
-header h1 {
-	float:inline-end;
-	display:inline;
-	font-size:40px;
-	margin-top:30px;
-	margin-left:25px;
-	margin-right:115px;
-}
-.logo {
-    height: 100px; /* Match header height */
-    max-height: 300px;
-	display:inline;
-	--lm: 0px;
-	margin-left:var(--lm);
-	margin-right:var(--lm);
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-grid;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-.pages ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline;
-    gap: 20px;
-}
-header table {
-	left:50%;
-	transform:translate(-50%,0);
-	display:inline;
-	position:relative;
-	
+.slideshow {
+	max-height:50%;
 }

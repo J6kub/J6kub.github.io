@@ -15,15 +15,15 @@
 		<table>
 			<tr>
 				<td style="float:right">
-					<img src="images/logo.png" alt="Cuddle Bay Logo" class="logo">
+					<img src="images/logo.png" onclick='showSec(sections[0])' alt="Cuddle Bay Logo" class="logo">
 					<h1>Cuddle Bay</h1>
 				</td>
 				<td>
 					<nav class='pages'>
 						<ul>
-							<li><a href="#about">About</a></li>
+							<li><a onclick='showSec(sections[1])'>About</a></li>
 							<li>/</li>
-							<li><a href="#services">Service/offer</a></li>
+							<li><a onclick='showSec(gid("services"))'>Service/offer</a></li>
 							<li>/</li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
@@ -41,7 +41,7 @@
         </nav>
     </header>
     
-    <section class="main-container">
+    <section class="main-container main-content">
         <div class="slideshow-container">
             <div class="slideshow">
                 <img src="images/image1.jpg" class="slide" alt="Happy pet">
@@ -67,6 +67,71 @@
 			</div>
 		</div>
     </section>
+		
+	<section class='about-container main-content' id='abtme'>
+		<table>
+				<tbody><tr>
+					<td>
+						<p>My name is <b>Izabela Dec</b> and I am a professional <b>pet sitter</b> and a <b>pet groomer</b> – <a href="#">link</a>. I love and have a lot of respect for all living creatures. I have a special connection with <b>dogs</b>, especially those <b>old ones</b>. I have decided to turn my hobby into a full-time occupation, and this is how <b>Cuddle Bay</b> was born. I want to focus and dedicate my time and heart to our furry, four-legged friends.​</p>
+
+					</td>
+					<td>
+						<center><img style="max-width:100%;max-height:30em;border-radius:20px;" class="abtmeimg" src="images/image1.jpg"></center>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<center><img style="max-width:100%;max-height:30em;float:right;border-radius:20px;" class="abtmeimg" src="images/image2.jpg"></center>
+					</td>
+					<td>
+						<p>I adopted <b>three dogs</b>, all rescued from <i>illegal breeding</i>: <b>Marzenka</b> the pug, <b>Lusia</b> the pug, and our chihuahua gentleman, <b>Gucio</b>. Sadly, <b>Marzenka</b> and <b>Lusia</b> are now enjoying each other’s company <i>over the rainbow bridge</i>. 🌈  
+
+Together with <b>Gucio</b>, we warmly invite you to our <b>cozy, pet-friendly zone</b> at <b>Cuddle Bay</b> in Oslo. <b>Cuddle Bay</b> is not just a place—above all, it is a <i>state of mind</i>, where <b>animals’ well-being</b> and <b>respect</b> are the top priority. 😊</p>
+
+					</td>
+					
+				</tr>
+			</tbody></table>
+	</section>
+	<section class='services-container main-content' id='services'>
+		<div id='offer'>
+				<table>
+					<tr>
+						<td>
+							<h3><u>Pet care services</u></h3>
+						</td>
+						<td>
+							<h3><u>Pet Hotel</u></h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id='pts'>
+								<li>Pet care for dogs - dog walks and daily care​</li>
+								<li>Pet care for cats  - at cat owner’s place​</li>
+								<li>Pet care for other small pets like parrots, chameleons, hamsters, guinea pigs​</li>
+								<li>Vet visits – wyjasnic ​</li>
+								<li>Care for sick animal– medicaments administration, visits to vet​</li>
+								<li>Care for older animal– according to individual needs​</li>
+							</div>
+						</td>
+						<td>
+							<p>
+								Cuddle Bay for your loved ones. ​
+
+Small, cozy space with individual approach to each pet.  Max 4 pets in care at the same time. I provide pet care at my home, and I dedicate 100% of my time to my pet clients.​
+
+I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
+							</p>
+							<p><b>Safety, respect and a lot of cuddles guaranteed.​</b></p>
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+		
+	</section>
+	
     <footer>
 		<center>CuddleBay - Izabella Dec - Org.nr 9999999999</center>
 	</footer>
