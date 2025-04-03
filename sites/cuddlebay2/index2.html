@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuddle Bay</title>
+	<link rel="stylesheet" href="common_style.css">
+	<link rel="stylesheet" href="index2.css">
+    <link id="variable_style" rel="stylesheet" href="styles.css">
+	
+</head>
+<body>
+    <header>
+        <img class='social-logos' src='images/ig-logo.png'>
+		<img class='social-logos' src='images/fb-logo.png'>
+        
+		<table>
+			<tr>
+				<td style="float:right">
+					<img src="images/logo.png" onclick='showSec(sections[0])' alt="Cuddle Bay Logo" class="logo">
+					<h1>Cuddle Bay - Pet Care Izabela Dec</h1>
+				</td>
+				<td>
+					<nav class='pages'>
+						<ul >
+							<li><a onclick='showSec(sections[1])'>ABOUT</a></li>
+							<li>/</li>
+							
+							<li><a href="#contact">CONTACT</a></li>
+						</ul>
+					</nav>
+				</td>
+				
+			</tr>
+		</table>
+        <nav>
+            <ul>
+                <li><a class='langB' href="#about">EN<img src='images/en.png'></a></li>
+                <li><a class='langB' href="#services">NO<img src='images/nor.png'></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="main-container main-content">
+        <div class="slideshow-container">
+			<img src='backy.png'>
+        </div>
+		<div class='info-button-container'>
+			<div class="infotainer">
+				
+				<h2>Trusted In-home Pet Care</h2>
+				<p>Cuddle Bay offers high-quality pet sitting* and pet hotel services in <b>Oslo</b>.</p>
+				<p>You can travel worry-free and be sure your loved one feels comfy and happy.</p>
+				<h3>Love, safety and a lot of cuddles guaranteed!</h3>
+				
+				
+			</div>
+			
+			
+			<div class="button-container">
+				
+				<button>Daycare</button>
+				<button>Pet Hotel</button>
+				<button>Grooming</button>
+			</div>
+			
+			<div class='fp-cert-container'>
+				<u><a onclick=showSec(gid('coape-cert')) style="color:blue;cursor:pointer;"><p>*COAPE Certificate</p></a></u>
+			</div>
+		</div>
+    </section>
+		
+	<section class="about-container main-content" id="abtme">
+    <!-- First Row -->
+       
+	
+		<div class="about-image about-flex">
+            <img class="abtmeimg" src="images/abtmepic1.jpeg" alt="Cuddle Bay">
+        </div>
+		<div class="about-text about-flex">
+            <p>My name is Izabela Dec and I live in Oslo.</p>
+			<p>For over 20 years I have been working for international companies as a finance expert. In parallel, I have been running temporary home for abused dogs for couple of years.</p>
+			<p>At certain point of my life I have decided to fully focus on what makes me really happy, which is taking care of our four-legged, furry loved ones. I have turned my hobby into a full-time occupation and this is how <b>Cuddle Bay was born.</b></p>
+			<p>I am now <b>professional pet sitter certified from COAPE</b> - Centre Of Applied Pet Ethology, with the license to provide <b>pet hotel services.</b></p>
+			<p>I invite you to my cozy, pet friendly zone at Cuddle Bay in Oslo. <b>Cuddle Bay is not just a place. Above all, it is a state of mind where the animal well being and respect are the top priority.</b></p>
+			<p>My mission is to provide trusted in-home pet care so you can travel worry free and be sure your loved one feels comfy and happy.</p>
+			<p style='text-align:center;display:block;'><b>Cuddle Bay - Love, safety and a lot of cuddles guaranteed!</b></p>
+        </div>
+		<div class="about-image about-flex">
+            <img class="abtmeimg" src="images/image2.jpg" alt="Cuddle Bay">
+        </div>
+	
+</section>
+
+	<section class='services-container main-content' id='services'>
+		<div id='offer'>
+				<table>
+					<tr>
+						<td>
+							<h3><u>Pet care services</u></h3>
+						</td>
+						<td>
+							<h3><u>Pet Hotel</u></h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id='pts'>
+								<li>Pet care for dogs - dog walks and daily care​</li>
+								<li>Pet care for cats  - at cat owner’s place​</li>
+								<li>Pet care for other small pets like parrots, chameleons, hamsters, guinea pigs​</li>
+								<li>Vet visits – wyjasnic ​</li>
+								<li>Care for sick animal– medicaments administration, visits to vet​</li>
+								<li>Care for older animal– according to individual needs​</li>
+							</div>
+						</td>
+						<td>
+							<p>
+								Cuddle Bay for your loved ones. ​
+
+Small, cozy space with individual approach to each pet.  Max 4 pets in care at the same time. I provide pet care at my home, and I dedicate 100% of my time to my pet clients.​
+
+I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
+							</p>
+							<p><b>Safety, respect and a lot of cuddles guaranteed.​</b></p>
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+		
+	</section>
+	
+	<section class='coape-container main-content' id='coape-cert'>
+		<div>
+			<img src='images/coape-cert.png'>
+		</div>
+	</section>
+	
+    <footer>
+		<center>Cuddle Bay - Pet Care Izabela Dec - Org.nr 934808932 - tel 405 78 988</center>
+	</footer>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

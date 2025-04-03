@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #9db8ba;
+    --primary-color: #d4f6ff;
     --secondary-color: #ff732d;
     --background-color: #f8f8f8;
-	--backy-color:beige;
+	--backy-color:#f5e0b3;
 }
 
 body {
@@ -12,12 +12,13 @@ body {
     text-align: center;
 	background-color:var(--backy-color);
 	font-family: 'Gill Sans MT', sans-serif;
+	
 }
 
 header {
     background-color: var(--primary-color);
     padding: 20px;
-    color: white;
+    color: black !important;
 }
 
 nav ul {
@@ -27,17 +28,21 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 5px;
 }
 
 nav ul li a {
-    color: white;
+    color: black !important;
     text-decoration: none;
     font-weight: bold;
 	font-size:1.2em;
 }
 .langB {
 	font-size:0.85em;
+}
+.langB img {
+	height:1.65em;
+	margin-left:3px;
 }
 
 .main-container {
@@ -48,22 +53,15 @@ nav ul li a {
 }
 
 .slideshow-container {
-    width: 50%;
-    max-width: 600px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    display: inline-block;
 }
 
-.slideshow {
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.slideshow img {
-    width: 100%;
-    flex-shrink: 0;
+.slideshow-container img {
+    
+    
+	height:600px;
+	
 }
 
 .button-container {
@@ -77,7 +75,7 @@ nav ul li a {
 
 .button-container button {
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     border: none;
     padding: 10px 20px;
     margin: 10px 10px;
@@ -97,21 +95,22 @@ nav ul li a {
 	margin-left:10px;
 }
 .infotainer {
-	
+	margin-top:100px;
 }
-.infotainer {
-	
-}
+
 .infotainer h2 {
 	font-size:2.4em;
 }
 .infotainer h3 {
 	font-size:1.9em;
+	text-decoration:none;
+	
 }
 .infotainer p {
 	font-size:1.8em;
 	text-wrap:wrap;
-	width:730px;
+	width:100%;
+	text-align:center;
 }
 
 .service-box {
@@ -123,7 +122,7 @@ nav ul li a {
 
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     padding: 10px;
     margin-top: 20px;
 }
@@ -138,11 +137,11 @@ header {
 header h1 {
 	float:inline-end;
 	display:inline;
-	font-size:80px;
-	margin:60px;
+	font-size:4em;
+	margin:25px;
 }
 .logo {
-    height: 200px; /* Match header height */
+    height: 150px; /* Match header height */
     max-height: 300px;
 	display:inline;
 	--lm: 20px;
@@ -192,31 +191,77 @@ footer {
 	width:100%;
 }
 
+#abtme {
+	font-size:1.5em !important;
+}
+/* General Section Styling */
+.about-container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 1em; /* Set font size */
+	flex-wrap: wrap;
+	justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
 
-#abtme p {
-	width:80%;
-	left:50%;
-	font-size:1.7em;
-	position:relative;
-	transform:translate(-50%,0);
-	display:inline-block;
+/* Flexbox Container */
+.about-flex {
+    display: flex;
+     /* Allows responsiveness */
+    
+    margin-bottom: 20px;
+	flex: 1 0 32%;
 }
-#
-.abtmeimg {
-	width:100%;
-	border-radius:20px;
-	
+
+/* Text Blocks */
+.about-text {
+     /* Each block takes 40% of container width */
+    display:block;
+    text-align: left;
 }
-#abtme table {
-	width:1200px;
-	left:50%;
-	font-size:0.8em;
-	position:relative;
-	transform:translate(-50%,0);
-	display:inline-block;
-	padding:0;
-	align-content:center;
+.about-text p {
+	margin-left:10px;
 }
+
+/* Image Containers */
+.about-image {
+    flex: 1 1 32%;
+    max-width:20%;
+    display: flex;
+    justify-content: center; /* Center images */
+}
+
+.about-image img {
+    width: 100%; /* Ensure images fit container */
+    height: auto;
+    max-height: 80vh; /* Prevents overly large images */
+    object-fit: cover; /* Keeps images visually balanced */
+    border-radius: 20px;
+}
+
+/* Full-Width Section */
+.about-full {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-flex {
+        flex-direction: column; /* Stack items in 1 column on small screens */
+        align-items: center;
+    }
+    .about-text, .about-image {
+        max-width: 90%; /* Increase size for better visibility */
+        text-align: center;
+    }
+}
+
+
+
 #offer table {
 	width:100%;
 	left:50%;

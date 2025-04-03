@@ -1,0 +1,40 @@
+coape-cert {
+	width:100%;
+	
+}
+#coape-cert div img {
+	position:relative;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+#coape-cert div {
+	
+	width:100%;
+}
+.fp-cert-container p {
+	text-align:left;
+	margin-top:100px;
+}
+.slideshow-container {
+	height:500px;
+}
+.pages {
+	margin-left:40px;
+}
+.social-logos {
+	position:fixed;
+	top:5px;
+	width:26px;
+	height:26px;
+}
+.social-logos:nth-of-type(1) {
+    /* Styles for the first image (Instagram logo) */
+    right:250px;
+}
+
+.social-logos:nth-of-type(2) {
+    /* Styles for the second image (Facebook logo) */
+    right:302px;
+}
+

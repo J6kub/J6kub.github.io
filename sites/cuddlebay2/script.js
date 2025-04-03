@@ -60,4 +60,7 @@ window.onload = function() {
 	showSec(sections[0])
 
 }
-foot.onload = setTimeout(function() {relocateFooter()},100);
+foot.onload = setTimeout(function() {
+	relocateFooter();
+	showSec(sections[1]);
+},100);
