@@ -62,5 +62,5 @@ window.onload = function() {
 }
 foot.onload = setTimeout(function() {
 	relocateFooter();
-	showSec(sections[1]);
+	//showSec(sections[1]);
 },100);

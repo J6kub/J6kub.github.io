@@ -37,4 +37,26 @@ coape-cert {
     /* Styles for the second image (Facebook logo) */
     right:302px;
 }
+.infotainer-flexer {
+    display: flex; /* Ensure it's a flex container */
+    flex-wrap: wrap; /* Allows wrapping only if necessary */
+    justify-content: space-evenly; /* Even spacing between elements */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Adds spacing between elements */
+	width:100%;
+}
 
+.flexyinfo {
+    display: flex;
+	max-width:45%;
+    flex-direction: row; /* Ensures elements inside are in a row */
+}
+
+.flexyinfo > * {
+    display: revert;
+ 
+}
+.infotainer-img img{
+	height:600px;
+
+}
