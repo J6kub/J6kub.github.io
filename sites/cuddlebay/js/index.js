@@ -46,8 +46,17 @@ function bgSel(bg) {
 	body.style.backgroundImage = "url('"+bg+"')"
 }
 
+window.onresize = function() {
+	Array.from(pages).forEach(function(el) {
+		if (el.style.display == 'block') {
+			footifyTheFooter(el.clientHeight);
+		}
+	})
+}
+
 
 window.onload = function() {
 	switchTo('main');
+	bgSel("bg1.png");
 	console.log('potato1');
 }

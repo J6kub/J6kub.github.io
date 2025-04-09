@@ -1,25 +1,29 @@
 let foot = document.querySelector('footer');
 let slideIndex = 0;
 
-function showSlides() {
-    let slides = document.getElementsByClassName("slide");
+// Daycare slideshow
+function startSlideshow(containerSelector) {
+    let index = 0;
+    const slides = document.querySelectorAll(containerSelector + ' .slide');
 
-    // Hide all slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    function show() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        index++;
+        if (index > slides.length) { index = 1; }
+        if (slides.length > 0) {
+            slides[index-1].style.display = "block";  
+        }
     }
 
-    // Increment slide index, and loop back to 0 after the last slide
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1; // Reset to the first slide
-    }
-
-    // Display the current slide
-    slides[slideIndex - 1].style.display = "block";
+    show(); // Show first slide immediately
+    setInterval(show, 3000); // Then every 3 seconds
 }
 
-// Start the slideshow
+// Start both slideshows independently
+//startSlideshow('.careslides');
+//startSlideshow('.hotelslides');
 
 
 function AdjustStyleSheet() {
@@ -77,5 +81,5 @@ window.onload = function() {
 }
 foot.onload = setTimeout(function() {
 	relocateFooter();
-	showSec(gid('hotel'));
+	//showSec(gid('hotel'));
 },100);
