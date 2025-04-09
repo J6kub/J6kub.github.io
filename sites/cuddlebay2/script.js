@@ -1,16 +1,26 @@
 let foot = document.querySelector('footer');
-document.addEventListener("DOMContentLoaded", function () {
-    let slides = document.querySelectorAll(".slide");
-    let slideContainer = document.querySelector(".slideshow");
-    let currentIndex = 0;
+let slideIndex = 0;
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
 
-    setInterval(nextSlide, 3000);
-});
+    // Increment slide index, and loop back to 0 after the last slide
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1; // Reset to the first slide
+    }
+
+    // Display the current slide
+    slides[slideIndex - 1].style.display = "block";
+}
+
+// Start the slideshow
+
 
 function AdjustStyleSheet() {
     let styleEl = document.getElementById('variable_style');
@@ -58,9 +68,14 @@ window.onload = function() {
 	AdjustStyleSheet();
 	relocateFooter();
 	showSec(sections[0])
+	
+	showSlides();
+
+// Repeat the slideshow every 4 seconds (4000 milliseconds)
+	let abcs = setInterval(showSlides, 4000);
 
 }
 foot.onload = setTimeout(function() {
 	relocateFooter();
-	//showSec(sections[1]);
+	showSec(gid('hotel'));
 },100);

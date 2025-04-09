@@ -23,7 +23,7 @@
 				<td>
 					<nav class='pages'>
 						<ul >
-							<li><a onclick='showSec(sections[1])'>ABOUT</a></li>
+							<li><a onclick=showSec(gid('abtme'))>ABOUT</a></li>
 							<li>/</li>
 							
 							<li><a href="#contact">CONTACT</a></li>
@@ -61,8 +61,8 @@
 					
 					<div class="button-container">
 						
-						<button>Daycare</button>
-						<button>Pet Hotel</button>
+						<button onclick=showSec(gid('daycare'))>Daycare</button>
+						<button onclick=showSec(gid('hotel'))>Pet Hotel</button>
 						<button>Grooming</button>
 					</div>
 					
@@ -74,6 +74,132 @@
 		</div>
     </section>
 		
+	<section id='daycare' class="main-container main-content">
+		<h1 style='position:absolute;top:220px;left:180px;font-size:2.0em !important'>Safety, respect and a lot of cuddles guaranteed.</h1>
+		<div class='infotainer-flexer'>
+		
+			<div class="infotainer-img flexyinfo">
+				
+				<div class="slideshow-container">
+					<div class="slide fade">
+						<img src="images/daycare/img1.jpg" alt="Image 1">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img2.jpg" alt="Image 2">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img3.jpg" alt="Image 3">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img4.jpg" alt="Image 4">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img5.jpg" alt="Image 5">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img6.jpg" alt="Image 6">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img7.jpg" alt="Image 7">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img8.jpg" alt="Image 8">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare/img9.jpg" alt="Image 9">
+					</div>
+				</div>
+			</div>
+			<div class='info-button-container flexyinfo'>
+				<div>
+					<div class="infotainer">
+						
+							<div class="daycare-service daycare-dogs">
+								<h2 class="daycare-heading">Day Care for Dogs</h2>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Daily Walks:</strong></li>
+									<li><span class="daycare-price">One per day – NOK 200</span></li>
+									<li><span class="daycare-price">Two per day – NOK 300</span></li>
+									<li><span class="daycare-price">Three per day – NOK 350</span></li>
+									<li><em class="daycare-note">Treats provided by the pet owner or will be added to the price.</em></li>
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-cats">
+								<h2 class="daycare-heading">Day Care for Cats</h2>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Daily Care at the Owner's Place:</strong> <span class="daycare-price">NOK 300</span></li>
+									<li>Includes feeding, cleaning a litter box, and staying for up to an hour to play or keep company.</li>
+									<li><em class="daycare-note">Food to be provided by the pet owner or will be added to the price.</em></li>
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-small-pets">
+								<h2 class="daycare-heading">Day Care for Small Pets</h2>
+								<h3 class="daycare-subheading">(parrots, chameleons, hamsters, guinea pigs)</h3>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Daily Care at Owner's Place:</strong> <span class="daycare-price">NOK 300</span></li>
+									<li>Once per day or according to individual needs.</li>
+									<li><em class="daycare-note">*Rats and spiders excluded.</em></li>
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-older-sick-animals">
+								<h2 class="daycare-heading">Day Care for Older or Sick Animals</h2>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Care Includes:</strong></li>
+									<li>Medicaments administration, visits to the vet, etc.</li>
+									<li><strong class="daycare-price">Price to be negotiated</strong> depending on individual needs.</li>
+								</ul>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+	<section id='hotel' class="main-container main-content">
+		<div class='infotainer-flexer'>
+			<div class="infotainer-img flexyinfo">
+				
+			</div>
+			<div class='info-button-container flexyinfo'>
+				<div>
+					<div class="infotainer">
+							<div class="daycare-service daycare-hotel">
+								<h2 style='font-size:1.3em;'>
+									Cuddle Bay for your loved ones. Small, cozy space with individual approach to each pet. Max 4 pets in care at the same time. I provide pet hotel at my home, and I dedicate 100% of my time to my pet clients. I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
+									Safety, respect and a lot of cuddles guaranteed.
+
+								</h2>
+								<h2 class="daycare-heading">Pet hotel Offer</h2>
+								<ul class="daycare-list" style='text-align:left;margin-left:120px;'>
+									<li><span class="daycare-price">One day stay – NOK 300</span></li>
+									<li><span class="daycare-price">Regular weekend (2 nights) – NOK 700</span></li>
+									<li><span class="daycare-price">Special weekend (Bank holiday, Christmas, Easter, etc.) (2 nights) – NOK 1000</span></li>
+									<li><span class="daycare-price">One week stay (6 nights) – NOK 2000</span></li>
+									<li><span class="daycare-price">Two weeks stay (13 nights) – NOK 4000</span></li>
+									<li><strong class="daycare-price">More than 2 weeks stay – Price to be negotiated</strong></li>
+								
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-hotel-info">
+								<p class="daycare-note">Food and dog bedding must be provided by the owner.</p>
+							</div>
+
+							<div class="daycare-service daycare-contact">
+								<h2 class="daycare-heading" style='font-size:1.7em'>Need a Custom Service?</h2>
+								<p>If you have not found the service you need, call me and I will do my best to provide it for you.</p>
+								<p><a href="#contact" class="daycare-contact-link">Contact Details</a></p>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+	
 	<section class="about-container main-content" id="abtme">
     <!-- First Row -->
        
@@ -88,12 +214,13 @@
 			<p>I am now <b>professional pet sitter certified from COAPE</b> - Centre Of Applied Pet Ethology, with the license to provide <b>pet hotel services.</b></p>
 			<p>I invite you to my cozy, pet friendly zone at Cuddle Bay in Oslo. <b>Cuddle Bay is not just a place. Above all, it is a state of mind where the animal well being and respect are the top priority.</b></p>
 			<p>My mission is to provide trusted in-home pet care so you can travel worry free and be sure your loved one feels comfy and happy.</p>
-			<p style='text-align:center;display:block;'><b>Cuddle Bay - Love, safety and a lot of cuddles guaranteed!</b></p>
         </div>
 		<div class="about-image about-flex">
             <img class="abtmeimg" src="images/image2.jpg" alt="Cuddle Bay">
         </div>
-	
+		<div class='about-flex' style='width:100%;'>
+			<p style='text-align:center;display:block;width:100%;font-size:1.5em;'><b>Cuddle Bay - Love, safety and a lot of cuddles guaranteed!</b></p>
+		</div>
 </section>
 
 	<section class='services-container main-content' id='services'>
@@ -142,7 +269,7 @@ I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
 	</section>
 	
     <footer>
-		<center>Cuddle Bay - Pet Care Izabela Dec - Org.nr 934808932 - tel 405 78 988</center>
+		
 	</footer>
     
     

@@ -60,3 +60,92 @@ coape-cert {
 	height:600px;
 
 }
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Ensure it spans full width */
+    max-height: 80%; /* You can adjust this height as needed */
+    overflow: hidden; /* Hide anything outside the container */
+}
+
+/* Hide all images by default */
+.slide {
+    display: none;
+    width: 100%; /* Ensure the slides take up full width */
+    height: 100%; /* Full height of the container */
+}
+
+/* Style the images */
+.slideshow-container img {
+    width: 100%; /* Ensure images fill the container's width */
+    height: 100%; /* Ensure images fill the container's height */
+    object-fit: cover; /* Preserve aspect ratio, crop image to fit */
+    object-position: center center; /* Center the image */
+    border-radius: 20px;
+}
+
+/* Fade effect */
+.fade {
+    animation: fade 9s infinite;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Main container for daycare services */
+.daycare-services {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.daycare-title {
+    text-align: center;
+    font-size: 2em;
+    color: black; /* Green color for title */
+    margin-bottom: 20px;
+}
+
+.daycare-service {
+    margin-bottom: 30px;
+}
+
+.daycare-heading {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0); /* Green border under service heading */
+    padding-bottom: 5px;
+}
+.daycare-subheading {
+	margin: 0;
+    font-size: 1.2em;
+}
+.daycare-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.daycare-list li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.daycare-price {
+    color: black; /* Green color for prices */
+    font-weight: bold;
+}
+
+.daycare-note {
+    font-style: italic;
+    color: #777;
+}

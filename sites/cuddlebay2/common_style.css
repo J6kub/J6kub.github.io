@@ -204,7 +204,7 @@ footer {
 	flex-wrap: wrap;
 	justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 0 100px;
 }
 
 /* Flexbox Container */
