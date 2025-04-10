@@ -11,8 +11,8 @@
 </head>
 <body>
     <header>
-        <img class='social-logos' src='images/ig-logo.png'>
-		<img class='social-logos' src='images/fb-logo.png'>
+        <img onclick="window.location.href='https://www.instagram.com/cuddlebay_petcare_i.dec/'" class='social-logos' src='images/ig-logo.png'>
+		<img onclick="window.location.href='https://www.facebook.com/profile.php?id=61575090086648'" class='social-logos' src='images/fb-logo.png'>
         
 		<table>
 			<tr>
@@ -23,10 +23,12 @@
 				<td>
 					<nav class='pages'>
 						<ul >
+							<li><a onclick=showSec(sections[0])>HOME</a></li>
+							<li>/</li>
 							<li><a onclick=showSec(gid('abtme'))>ABOUT</a></li>
 							<li>/</li>
 							
-							<li><a href="#contact">CONTACT</a></li>
+							<li><a onclick=showSec(gid('contact'))>CONTACT</a></li>
 						</ul>
 					</nav>
 				</td>
@@ -67,7 +69,7 @@
 					</div>
 					
 					<div class='fp-cert-container'>
-						<u><a onclick=showSec(gid('coape-cert')) style="color:blue;cursor:pointer;"><p>*COAPE Certificate</p></a></u>
+						<u style="color:blue;cursor:pointer;text-decoration:none; " onclick=showSec(gid('coape-cert'))><p>*COAPE Certificate</p></u>
 					</div>
 				</div>
 			</div>
@@ -75,7 +77,7 @@
     </section>
 		
 	<section id='daycare' class="main-container main-content">
-		<h1 style='position:absolute;top:220px;left:180px;font-size:2.0em !important'>Safety, respect and a lot of cuddles guaranteed.</h1>
+		
 		<div class='infotainer-flexer'>
 		
 			<div class="infotainer-img flexyinfo">
@@ -147,6 +149,7 @@
 									<li>Medicaments administration, visits to the vet, etc.</li>
 									<li><strong class="daycare-price">Price to be negotiated</strong> depending on individual needs.</li>
 								</ul>
+								<p>Safety, respect and a lot of cuddles guaranteed.</p>
 							</div>
 						</div>
 				</div>
@@ -155,10 +158,9 @@
     </section>
 	
 	<section id='hotel' class="main-container main-content">
-		<h1 style='position:absolute;top:220px;left:180px;font-size:2.0em !important'>Safety, respect and a lot of cuddles guaranteed.</h1>
 		<div class='infotainer-flexer'>
 		
-			<div class="infotainer-img flexyinfo">
+			<div style='aspect-ratio:1920/1440 !important' class="infotainer-img flexyinfo">
 				
 				<div id='hotelslides' class="hotelslides slideshow-container">
 					<div class="slide fade">
@@ -193,11 +195,11 @@
 					<div class="infotainer">
 						
 							<div class="daycare-service daycare-hotel">
-								<h2 style='font-size:1.3em;'>
-									Cuddle Bay for your loved ones. Small, cozy space with individual approach to each pet. Max 4 pets in care at the same time. I provide pet hotel at my home, and I dedicate 100% of my time to my pet clients. I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
+								<p style='font-size:1.3em;'>
+									<b>Cuddle Bay</b> for your loved ones. Small, cozy space with individual approach to each pet. Max 4 pets in care at the same time. I provide pet hotel at my home, and I dedicate 100% of my time to my pet clients. I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
 									Safety, respect and a lot of cuddles guaranteed.
 
-								</h2>
+								</p>
 								<h2 class="daycare-heading">Pet hotel Offer</h2>
 								<ul class="daycare-list" style='text-align:left;margin-left:120px;'>
 									<li><span class="daycare-price">One day stay – NOK 300</span></li>
@@ -218,6 +220,7 @@
 								<h2 class="daycare-heading" style='font-size:1.7em'>Need a Custom Service?</h2>
 								<p>If you have not found the service you need, call me and I will do my best to provide it for you.</p>
 								<p><a href="#contact" class="daycare-contact-link">Contact Details</a></p>
+								<p>Safety, respect and a lot of cuddles guaranteed.</p>
 							</div>
 						</div>
 				</div>
@@ -226,46 +229,53 @@
     </section>
 	
 	
-	<section id='hotel2' class="main-container main-content">
-		<div class='infotainer-flexer'>
-			<div class="infotainer-img flexyinfo">
+	<section id="contact" class="main-container main-content" style='display:block !important;'>
+		<h1>Contact Information</h1>
+		<div style='display:block;'>
+			<div class="contact-flex">
 				
-			</div>
-			<div class='info-button-container flexyinfo'>
-				<div>
-					<div class="infotainer">
-						
-						
-						
-						
-							
+				<!-- Google Maps Embed -->
+				<div class="contact-map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.1419617143083!2d10.729219377303853!3d59.93308786254705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416ddf6282b091%3A0xcb18d470fa7152ea!2sPilestredet%20100C%2C%200358%20Oslo!5e1!3m2!1sno!2sno!4v1744215267334!5m2!1sno!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
+
+				<!-- Contact Details -->
+				<div class="contact-info">
+					<p><strong>Email:</strong> decizabela25@gmail.com</p>
+					<p><strong>Phone:</strong> +47 405 78 988</p>
+					<p><strong>Address:</strong> pilestredet 100c, Oslo</p>
+					<p><strong>Org. nr</strong> 934 808 932</p>
+					<p><a href='https://www.facebook.com/profile.php?id=61575090086648'><strong>Facebook</strong></a>
+					<p><a href='https://www.instagram.com/cuddlebay_petcare_i.dec/'><strong>Instagram</strong></a>
+				</div>
+
 			</div>
 		</div>
-    </section>
+	</section>
 	
 	
 	<section class="about-container main-content" id="abtme">
     <!-- First Row -->
        
-	
-		<div class="about-image about-flex">
-            <img class="abtmeimg" src="images/abtmepic1.jpeg" alt="Cuddle Bay">
-        </div>
-		<div class="about-text about-flex">
-            <p>My name is Izabela Dec and I live in Oslo.</p>
-			<p>For over 20 years I have been working for international companies as a finance expert. In parallel, I have been running temporary home for abused dogs for couple of years.</p>
-			<p>At certain point of my life I have decided to fully focus on what makes me really happy, which is taking care of our four-legged, furry loved ones. I have turned my hobby into a full-time occupation and this is how <b>Cuddle Bay was born.</b></p>
-			<p>I am now <b>professional pet sitter certified from COAPE</b> - Centre Of Applied Pet Ethology, with the license to provide <b>pet hotel services.</b></p>
-			<p>I invite you to my cozy, pet friendly zone at Cuddle Bay in Oslo. <b>Cuddle Bay is not just a place. Above all, it is a state of mind where the animal well being and respect are the top priority.</b></p>
-			<p>My mission is to provide trusted in-home pet care so you can travel worry free and be sure your loved one feels comfy and happy.</p>
-        </div>
-		<div class="about-image about-flex">
-            <img class="abtmeimg" src="images/image2.jpg" alt="Cuddle Bay">
-        </div>
-		<div class='about-flex' style='width:100%;'>
-			<p style='text-align:center;display:block;width:100%;font-size:1.5em;'><b>Cuddle Bay - Love, safety and a lot of cuddles guaranteed!</b></p>
-		</div>
+		<div style='display:flex' class="about-container">
+			<div class="about-image about-flex">
+				<img class="abtmeimg" src="images/abtmepic1.jpeg" alt="Cuddle Bay">
+			</div>
+			<div class="about-text about-flex">
+				<p>My name is Izabela Dec and I live in Oslo.</p>
+				<p>For over 20 years I have been working for international companies as a finance expert. In parallel, I have been running temporary home for abused dogs for couple of years.</p>
+				<p>At certain point of my life I have decided to fully focus on what makes me really happy, which is taking care of our four-legged, furry loved ones. I have turned my hobby into a full-time occupation and this is how <b>Cuddle Bay was born.</b></p>
+				<p>I am now <b>professional pet sitter certified from COAPE</b> - Centre Of Applied Pet Ethology, with the license to provide <b>pet hotel services.</b></p>
+				<p>I invite you to my cozy, pet friendly zone at Cuddle Bay in Oslo. <b>Cuddle Bay is not just a place. Above all, it is a state of mind where the animal well being and respect are the top priority.</b></p>
+				<p>My mission is to provide trusted in-home pet care so you can travel worry free and be sure your loved one feels comfy and happy.</p>
+			</div>
+			<div class="about-image about-flex">
+				<img class="abtmeimg" src="images/image2.jpg" alt="Cuddle Bay">
+			</div>
+			<div class='about-flex' style='width:100%;'>
+				<p style='text-align:center;display:block;width:100%;font-size:1.5em;'><b>Cuddle Bay - Love, safety and a lot of cuddles guaranteed!</b></p>
+			</div>
+		<div>
 </section>
 
 	<section class='services-container main-content' id='services'>

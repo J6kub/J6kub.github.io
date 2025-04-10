@@ -17,7 +17,8 @@ coape-cert {
 	margin-top:100px;
 }
 .slideshow-container {
-	height:500px;
+	height:720px;
+	
 }
 .pages {
 	margin-left:40px;
@@ -27,6 +28,7 @@ coape-cert {
 	top:5px;
 	width:26px;
 	height:26px;
+	cursor:pointer;
 }
 .social-logos:nth-of-type(1) {
     /* Styles for the first image (Instagram logo) */
@@ -78,10 +80,11 @@ coape-cert {
 /* Style the images */
 .slideshow-container img {
     width: 100%; /* Ensure images fill the container's width */
-    height: 100%; /* Ensure images fill the container's height */
+    max-height: 100%; /* Ensure images fill the container's height */
     object-fit: cover; /* Preserve aspect ratio, crop image to fit */
     object-position: center center; /* Center the image */
     border-radius: 20px;
+	object-fit:cover;
 }
 
 /* Fade effect */
@@ -128,7 +131,7 @@ coape-cert {
 }
 .daycare-subheading {
 	margin: 0;
-    font-size: 1.2em;
+    font-size: 1.2em !important;
 }
 .daycare-list {
     list-style-type: none;
@@ -148,4 +151,13 @@ coape-cert {
 .daycare-note {
     font-style: italic;
     color: #777;
+}
+#contact h1 {
+	display:block;
+}
+
+
+
+#hotelslides {
+	aspect-ratio:1920/1400 !important;
 }

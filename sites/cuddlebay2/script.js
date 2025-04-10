@@ -59,7 +59,7 @@ let sections = document.querySelectorAll('section');
 
 function showSec(section) {
 	Array.from(sections).forEach(function(el) {el.style.display = 'none'})
-	section.style.display = "flex";
+	section.style.display = "block";
 }
 function gid(id) {
 	return document.getElementById(id);

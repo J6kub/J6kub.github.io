@@ -1,0 +1,163 @@
+coape-cert {
+	width:100%;
+	
+}
+#coape-cert div img {
+	position:relative;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+#coape-cert div {
+	
+	width:100%;
+}
+.fp-cert-container p {
+	text-align:left;
+	margin-top:100px;
+}
+.slideshow-container {
+	height:720px;
+	
+}
+.pages {
+	margin-left:40px;
+}
+.social-logos {
+	position:fixed;
+	top:5px;
+	width:26px;
+	height:26px;
+	cursor:pointer;
+}
+.social-logos:nth-of-type(1) {
+    /* Styles for the first image (Instagram logo) */
+    right:250px;
+}
+
+.social-logos:nth-of-type(2) {
+    /* Styles for the second image (Facebook logo) */
+    right:302px;
+}
+.infotainer-flexer {
+    display: flex; /* Ensure it's a flex container */
+    flex-wrap: wrap; /* Allows wrapping only if necessary */
+    justify-content: space-evenly; /* Even spacing between elements */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Adds spacing between elements */
+	width:100%;
+}
+
+.flexyinfo {
+    display: flex;
+	max-width:45%;
+    flex-direction: row; /* Ensures elements inside are in a row */
+}
+
+.flexyinfo > * {
+    display: revert;
+ 
+}
+.infotainer-img img{
+	height:600px;
+
+}
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Ensure it spans full width */
+    max-height: 80%; /* You can adjust this height as needed */
+    overflow: hidden; /* Hide anything outside the container */
+}
+
+/* Hide all images by default */
+.slide {
+    display: none;
+    width: 100%; /* Ensure the slides take up full width */
+    height: 100%; /* Full height of the container */
+}
+
+/* Style the images */
+.slideshow-container img {
+    width: 100%; /* Ensure images fill the container's width */
+    max-height: 100%; /* Ensure images fill the container's height */
+    object-fit: cover; /* Preserve aspect ratio, crop image to fit */
+    object-position: center center; /* Center the image */
+    border-radius: 20px;
+	object-fit:cover;
+}
+
+/* Fade effect */
+.fade {
+    animation: fade 9s infinite;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Main container for daycare services */
+.daycare-services {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.daycare-title {
+    text-align: center;
+    font-size: 2em;
+    color: black; /* Green color for title */
+    margin-bottom: 20px;
+}
+
+.daycare-service {
+    margin-bottom: 30px;
+}
+
+.daycare-heading {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0); /* Green border under service heading */
+    padding-bottom: 5px;
+}
+.daycare-subheading {
+	margin: 0;
+    font-size: 1.2em !important;
+}
+.daycare-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.daycare-list li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.daycare-price {
+    color: black; /* Green color for prices */
+    font-weight: bold;
+}
+
+.daycare-note {
+    font-style: italic;
+    color: #777;
+}
+#contact h1 {
+	display:block;
+}
+
+
+
+#hotelslides {
+	aspect-ratio:1920/1400 !important;
+}

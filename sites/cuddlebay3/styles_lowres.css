@@ -1,0 +1,47 @@
+/* Overwritten Styles from the second CSS file */
+
+/* Body */
+body {
+
+}
+
+/* Header */
+header {
+    padding: 00px 0px;
+}
+
+/* Header H1 */
+header h1 {
+    font-size: 40px;
+	margin:0;
+	margin-top:25px;
+	margin-right:145px;
+}
+
+/* Logo */
+.logo {
+    height: 100px; /* Corrected to 100px */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    width:400px;
+	height:500px;
+	
+}
+
+/* Infotainer Paragraph */
+.infotainer p {
+    font-size: 1.3em;
+}
+
+/* Slideshow Image */
+.slideshow img {
+    max-width: 100%;
+	aspect-ratio:2316/3088;
+    flex-shrink: 0;
+	height:100%;
+}
+.slideshow {
+	max-height:50%;
+}

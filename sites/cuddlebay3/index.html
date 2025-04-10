@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuddle Bay</title>
+	<link rel="stylesheet" href="common_style.css">
+	<link rel="stylesheet" href="index2.css">
+    <link id="variable_style" rel="stylesheet" href="styles.css">
+	
+</head>
+<body>
+    <header>
+        <img onclick="window.location.href='https://www.instagram.com/cuddlebay_petcare_i.dec/'" class='social-logos' src='images/ig-logo.png'>
+		<img onclick="window.location.href='https://www.facebook.com/profile.php?id=61575090086648'" class='social-logos' src='images/fb-logo.png'>
+        
+		<table>
+			<tr>
+				<td style="float:right">
+					<img src="images/logo.png" onclick='showSec(sections[0])' alt="Cuddle Bay Logo" class="logo">
+					<h1>Cuddle Bay - Pet Care Izabela Dec</h1>
+				</td>
+				<td>
+					<nav class='pages'>
+						<ul >
+							<li><a onclick=showSec(sections[0])>HOME</a></li>
+							<li>/</li>
+							<li><a onclick=showSec(gid('abtme'))>ABOUT</a></li>
+							<li>/</li>
+							
+							<li><a onclick=showSec(gid('contact'))>CONTACT</a></li>
+						</ul>
+					</nav>
+				</td>
+				
+			</tr>
+		</table>
+        <nav>
+            <ul>
+                <li><a class='langB' href="#about">EN<img src='images/en.png'></a></li>
+                <li><a class='langB' href="#services">NO<img src='images/nor.png'></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="main-container main-content">
+		<div class='infotainer-flexer'>
+			<div class="infotainer-img flexyinfo">
+				<img src='backy.png'>
+			</div>
+			<div class='info-button-container flexyinfo'>
+				<div>
+					<div class="infotainer">
+						
+						<h2>Trusted In-home Pet Care</h2>
+						<p>Cuddle Bay offers high-quality pet sitting* and pet hotel services in <b>Oslo</b>.</p>
+						<p>You can travel worry-free and be sure your loved one feels comfy and happy.</p>
+						<h3>Love, safety and a lot of cuddles guaranteed!</h3>
+						
+						
+					</div>
+					
+					
+					<div class="button-container">
+						
+						<button onclick="showSec(gid('daycare'));startSlideshow('.careslides')">Daycare</button>
+						<button onclick="showSec(gid('hotel'));startSlideshow('.hotelslides')">Pet Hotel</button>
+						<button>Grooming</button>
+					</div>
+					
+					<div class='fp-cert-container'>
+						<u style="color:blue;cursor:pointer;text-decoration:none; " onclick=showSec(gid('coape-cert'))><p>*COAPE Certificate</p></u>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+		
+	<section id='daycare' class="main-container main-content">
+		
+		<div class='infotainer-flexer'>
+		
+			<div class="infotainer-img flexyinfo">
+				
+				<div id='careslides' class="careslides slideshow-container">
+					<div class="slide fade">
+						<img src="images/daycare2/img1.png" alt="Image 1">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare2/img2.png" alt="Image 2">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare2/img3.png" alt="Image 3">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare2/img4.png" alt="Image 4">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare2/img5.png" alt="Image 5">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare2/img6.png" alt="Image 6">
+					</div>
+					<div class="slide fade">
+						<img src="images/daycare2/img7.png" alt="Image 7">
+					</div>
+					
+					
+				</div>
+			</div>
+			<div class='info-button-container flexyinfo'>
+				<div>
+					<div class="infotainer">
+						
+							<div class="daycare-service daycare-dogs">
+								<h2 class="daycare-heading">Day Care for Dogs</h2>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Daily Walks:</strong></li>
+									<li><span class="daycare-price">One per day – NOK 200</span></li>
+									<li><span class="daycare-price">Two per day – NOK 300</span></li>
+									<li><span class="daycare-price">Three per day – NOK 350</span></li>
+									<li><em class="daycare-note">Treats provided by the pet owner or will be added to the price.</em></li>
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-cats">
+								<h2 class="daycare-heading">Day Care for Cats</h2>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Daily Care at the Owner's Place:</strong> <span class="daycare-price">NOK 300</span></li>
+									<li>Includes feeding, cleaning a litter box, and staying for up to an hour to play or keep company.</li>
+									<li><em class="daycare-note">Food to be provided by the pet owner or will be added to the price.</em></li>
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-small-pets">
+								<h2 class="daycare-heading">Day Care for Small Pets</h2>
+								<h3 class="daycare-subheading">(parrots, chameleons, hamsters, guinea pigs)</h3>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Daily Care at Owner's Place:</strong> <span class="daycare-price">NOK 300</span></li>
+									<li>Once per day or according to individual needs.</li>
+									<li><em class="daycare-note">*Rats and spiders excluded.</em></li>
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-older-sick-animals">
+								<h2 class="daycare-heading">Day Care for Older or Sick Animals</h2>
+								<ul class="daycare-list">
+									<li><strong class="daycare-price">Care Includes:</strong></li>
+									<li>Medicaments administration, visits to the vet, etc.</li>
+									<li><strong class="daycare-price">Price to be negotiated</strong> depending on individual needs.</li>
+								</ul>
+								<p>Safety, respect and a lot of cuddles guaranteed.</p>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+	<section id='hotel' class="main-container main-content">
+		<div class='infotainer-flexer'>
+		
+			<div style='aspect-ratio:1920/1440 !important' class="infotainer-img flexyinfo">
+				
+				<div id='hotelslides' class="hotelslides slideshow-container">
+					<div class="slide fade">
+						<img src="images/hotel2/img1.png" alt="Image 1">
+					</div>
+					<div class="slide fade">
+						<img src="images/hotel2/img2.png" alt="Image 2">
+					</div>
+					<div class="slide fade">
+						<img src="images/hotel2/img3.png" alt="Image 3">
+					</div>
+					<div class="slide fade">
+						<img src="images/hotel2/img4.png" alt="Image 4">
+					</div>
+					<div class="slide fade">
+						<img src="images/hotel2/img5.png" alt="Image 5">
+					</div>
+					<div class="slide fade">
+						<img src="images/hotel2/img6.png" alt="Image 6">
+					</div>
+					<div class="slide fade">
+						<img src="images/hotel2/img7.png" alt="Image 7">
+					</div>
+					<div class="slide fade">
+						<img src="images/hotel2/img8.png" alt="Image 8">
+					</div>
+					
+				</div>
+			</div>
+			<div class='info-button-container flexyinfo'>
+				<div>
+					<div class="infotainer">
+						
+							<div class="daycare-service daycare-hotel">
+								<p style='font-size:1.3em;'>
+									<b>Cuddle Bay</b> for your loved ones. Small, cozy space with individual approach to each pet. Max 4 pets in care at the same time. I provide pet hotel at my home, and I dedicate 100% of my time to my pet clients. I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
+									Safety, respect and a lot of cuddles guaranteed.
+
+								</p>
+								<h2 class="daycare-heading">Pet hotel Offer</h2>
+								<ul class="daycare-list" style='text-align:left;margin-left:120px;'>
+									<li><span class="daycare-price">One day stay – NOK 300</span></li>
+									<li><span class="daycare-price">Regular weekend (2 nights) – NOK 700</span></li>
+									<li><span class="daycare-price">Special weekend (Bank holiday, Christmas, Easter, etc.) (2 nights) – NOK 1000</span></li>
+									<li><span class="daycare-price">One week stay (6 nights) – NOK 2000</span></li>
+									<li><span class="daycare-price">Two weeks stay (13 nights) – NOK 4000</span></li>
+									<li><strong class="daycare-price">More than 2 weeks stay – Price to be negotiated</strong></li>
+								
+								</ul>
+							</div>
+
+							<div class="daycare-service daycare-hotel-info">
+								<p class="daycare-note">Food and dog bedding must be provided by the owner.</p>
+							</div>
+
+							<div class="daycare-service daycare-contact">
+								<h2 class="daycare-heading" style='font-size:1.7em'>Need a Custom Service?</h2>
+								<p>If you have not found the service you need, call me and I will do my best to provide it for you.</p>
+								<p><a href="#contact" class="daycare-contact-link">Contact Details</a></p>
+								<p>Safety, respect and a lot of cuddles guaranteed.</p>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+    </section>
+	
+	
+	<section id="contact" class="main-container main-content" style='display:block !important;'>
+		<h1>Contact Information</h1>
+		<div style='display:block;'>
+			<div class="contact-flex">
+				
+				<!-- Google Maps Embed -->
+				<div class="contact-map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.1419617143083!2d10.729219377303853!3d59.93308786254705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416ddf6282b091%3A0xcb18d470fa7152ea!2sPilestredet%20100C%2C%200358%20Oslo!5e1!3m2!1sno!2sno!4v1744215267334!5m2!1sno!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+
+				<!-- Contact Details -->
+				<div class="contact-info">
+					<p><strong>Email:</strong> decizabela25@gmail.com</p>
+					<p><strong>Phone:</strong> +47 405 78 988</p>
+					<p><strong>Address:</strong> pilestredet 100c, Oslo</p>
+					<p><strong>Org. nr</strong> 934 808 932</p>
+					<p><a href='https://www.facebook.com/profile.php?id=61575090086648'><strong>Facebook</strong></a>
+					<p><a href='https://www.instagram.com/cuddlebay_petcare_i.dec/'><strong>Instagram</strong></a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	
+	
+	<section class="about-container main-content" id="abtme">
+    <!-- First Row -->
+       
+		<div style='display:flex' class="about-container">
+			<div class="about-image about-flex">
+				<img class="abtmeimg" src="images/abtmepic1.jpeg" alt="Cuddle Bay">
+			</div>
+			<div class="about-text about-flex">
+				<p>My name is Izabela Dec and I live in Oslo.</p>
+				<p>For over 20 years I have been working for international companies as a finance expert. In parallel, I have been running temporary home for abused dogs for couple of years.</p>
+				<p>At certain point of my life I have decided to fully focus on what makes me really happy, which is taking care of our four-legged, furry loved ones. I have turned my hobby into a full-time occupation and this is how <b>Cuddle Bay was born.</b></p>
+				<p>I am now <b>professional pet sitter certified from COAPE</b> - Centre Of Applied Pet Ethology, with the license to provide <b>pet hotel services.</b></p>
+				<p>I invite you to my cozy, pet friendly zone at Cuddle Bay in Oslo. <b>Cuddle Bay is not just a place. Above all, it is a state of mind where the animal well being and respect are the top priority.</b></p>
+				<p>My mission is to provide trusted in-home pet care so you can travel worry free and be sure your loved one feels comfy and happy.</p>
+			</div>
+			<div class="about-image about-flex">
+				<img class="abtmeimg" src="images/image2.jpg" alt="Cuddle Bay">
+			</div>
+			<div class='about-flex' style='width:100%;'>
+				<p style='text-align:center;display:block;width:100%;font-size:1.5em;'><b>Cuddle Bay - Love, safety and a lot of cuddles guaranteed!</b></p>
+			</div>
+		<div>
+</section>
+
+	<section class='services-container main-content' id='services'>
+		<div id='offer'>
+				<table>
+					<tr>
+						<td>
+							<h3><u>Pet care services</u></h3>
+						</td>
+						<td>
+							<h3><u>Pet Hotel</u></h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id='pts'>
+								<li>Pet care for dogs - dog walks and daily care​</li>
+								<li>Pet care for cats  - at cat owner’s place​</li>
+								<li>Pet care for other small pets like parrots, chameleons, hamsters, guinea pigs​</li>
+								<li>Vet visits – wyjasnic ​</li>
+								<li>Care for sick animal– medicaments administration, visits to vet​</li>
+								<li>Care for older animal– according to individual needs​</li>
+							</div>
+						</td>
+						<td>
+							<p>
+								Cuddle Bay for your loved ones. ​
+
+Small, cozy space with individual approach to each pet.  Max 4 pets in care at the same time. I provide pet care at my home, and I dedicate 100% of my time to my pet clients.​
+
+I am a certified pet sitter from COAPE (Centre of Applied Pet Ethology) - link
+							</p>
+							<p><b>Safety, respect and a lot of cuddles guaranteed.​</b></p>
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+		
+	</section>
+	
+	<section class='coape-container main-content' id='coape-cert'>
+		<div>
+			<img src='images/coape-cert.png'>
+		</div>
+	</section>
+	
+    <footer>
+		
+	</footer>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
