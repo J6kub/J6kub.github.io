@@ -43,6 +43,12 @@ function relocateFooter() {
 	foot.style.top = getDocumentHeight() - (foot.clientHeight*1.5) + "px";
 }
 
+function updateColorOf(parent, gideon, csEl) {
+	let root = document.documentElement;
+	root.style.setProperty(csEl,parent.value);
+	gid(gideon).value = parent.value;
+}
+
 function getDocumentHeight() {
     return Math.max(
         document.body.scrollHeight,

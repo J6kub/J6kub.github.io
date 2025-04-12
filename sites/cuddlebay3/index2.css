@@ -3,10 +3,10 @@ coape-cert {
 	
 }
 #coape-cert div img {
-	position:relative;
+	position:fixed;
 	left:50%;
-	top:50%;
-	transform:translate(-50%,-50%);
+	bottom:20px;
+	transform:translate(-50%,0);
 }
 #coape-cert div {
 	
@@ -160,4 +160,14 @@ coape-cert {
 
 #hotelslides {
 	aspect-ratio:1920/1400 !important;
+}
+
+.colorpicker {
+	position:fixed;
+	bottom:0;
+	left:0;
+	
+}
+.colorpicker input {
+	padding:3px;
 }

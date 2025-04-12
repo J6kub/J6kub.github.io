@@ -95,7 +95,7 @@ nav ul li a {
 	margin-left:10px;
 }
 .infotainer {
-	margin-top:100px;
+	margin-top:00px;
 }
 
 .infotainer h2 {
@@ -295,6 +295,10 @@ footer {
     align-items: flex-start;
     gap: 40px;
     margin-top: 20px;
+	max-width:900px;
+	position:relative;
+	left:50%;
+	transform:translate(-50%,0);
 }
 
 /* Each child (map/info) */
@@ -325,4 +329,14 @@ footer {
         max-width: 100%;
         flex: 1 1 100%;
     }
+}
+.pet-hotel-header {
+	width:100%;
+}
+.pet-hotel-header p {
+	width:80%;
+	text-align:center;
+	position:relative;
+	left:50%;
+	transform:translate(-50%,0);
 }
