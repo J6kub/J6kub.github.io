@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+		}
+
+		input {
+			font-size: 8vw;        /* Responsive font size */
+			width: 100vw;          /* Full viewport width */
+			height: 20vh;          /* 20% of viewport height */
+			box-sizing: border-box;
+			padding: 10px;
+			border: 2px solid #ccc;
+			border-radius: 10px;
+		}
+		p {
+			font-size:8vw
+		}
+	</style>
+	</head>
+	<body>
+		<p id='displ'></p>
+		<input id='regnr' onkeyup='check(this)' type='text' max=7 placeholder="reg.nr"></input>
+	</body>
+	<script>
+		displ = document.getElementById('displ');
+		function check(el) {
+			let str = 'er safe'
+			displ.style.backgroundColor = "white";
+				displ.style.color = 'black';
+			if (allRegs.includes(el.value) || cleanedRegs.includes(el.value.toLowerCase().replace(" ", "")) ) {
+				str = 'er politi'
+				displ.style.backgroundColor = "red";
+				displ.style.color = 'white';
+			}
+			displ.innerHTML = el.value + " " + str
+		}
+		
+		allRegs = JSON.parse('["PT 8700","PX 56648","PR 43529","PX 57713","PR 16344","PD 44982","DV 8532","PR 23130","PX 60311","PX 60309","PX 60308","PX 61468","PR 51181","PR 64599","DS 28853","PX 61674","PX 61675","PD 56344","KZ 64827","RA 47162","LF 5985","PP 75815","PX 57972","LJ 64614","PX 55269","DZ 9414","DY 2673","HW 7612","PR 55688","PR 55689","KY 7273","PR 61129","BU 37958","VJ 28292","SX 24045","DS 12902","DS 12912","PR 65096","US 15984","PR 64600","LJ 83922","DS 17258","DS 17253","RY 6398","DS 19129","DS 16696","LS 95835","PR 65719","PD 76447","PR 70810","KJ 61558","DS 24546","DS 28857","TN 8581","EH 95040","EJ 41977","EJ 41978","TR 3746","EJ 62984","PR 70955","PD 76520","PD 76521","DS 34037","PR 22617","PR 39550","PR 61194","EJ 41960","EJ 41961","EJ 41962","UB 4794","LJ 87635","BT 55030","BT 73765","DP 34860","PR 49851","PX 67152","PX 57714","PX 57123","PR 71287","PR 61481","VJ 29326","RH 9695","PX 63885","PX 56100","PX 56277","PX 57592","PX 57593","PD 44983","PD 68012","PX 57712","PX 58208","PD 48256","PX 59617","PX 59618","PX 60310","PR 31650","PX 61672","BT 73759","PR 56428","PR 56977","PR 55690","PX 61673","PD 56345","BT 63483","BT 63482","PR 48697","PD 73324","LJ 74076","DR 59128","PR 58666","LB 5666","DR 98020","DR 98750","PB 1391","US 15988","DS 17260","DS 19130","PR 68208","PR 70809","PR 68207","DS 28860","EJ 58778","EJ 58779","TT 9964","EJ 62983","EJ 62985","DN 32392","PD 52703"]')
+		cleanedRegs = [];
+		for (i=0; i<allRegs.length; i++) {
+			reg = allRegs[i];
+			reg = reg
+			.replace(" ", "")
+			.toLowerCase()
+			cleanedRegs.push(reg);
+		}
+	</script>
+</html>
