@@ -61,6 +61,14 @@
 			displ.innerHTML = "Skriv inn reg.nr";
 			input.disabled = false;
 			input.focus();
+			
+			const params = new URLSearchParams(window.location.search);
+			
+			if (params.get('reg') != "") {
+				input.value = params.get('reg');
+				check(input);
+			}
+			
 		})
 		.catch(err => {
 			displ.innerHTML = "Feil ved lasting av database";
