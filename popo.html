@@ -1,0 +1,78 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+		}
+
+		input {
+			font-size: 8vw;
+			width: 100vw;
+			height: 20vh;
+			box-sizing: border-box;
+			padding: 10px;
+			border: 2px solid #ccc;
+			border-radius: 10px;
+		}
+		p {
+			font-size: 8vw;
+			margin: 0;
+			padding: 30px;
+		}
+	</style>
+</head>
+<body>
+	<p id="displ">Laster...</p>
+	<input id="regnr" type="text" maxlength="10" placeholder="reg.nr" onkeyup="check(this)" disabled>
+</body>
+<script>
+	let allRegs = [];
+	let cleanedRegs = [];
+	const displ = document.getElementById('displ');
+	const input = document.getElementById('regnr');
+
+	function check(el) {
+		let str = 'er safe';
+		displ.style.backgroundColor = "white";
+		displ.style.color = 'black';
+
+		const val = el.value.toLowerCase().replace(" ", "");
+
+		if (allRegs.includes(el.value) || cleanedRegs.includes(val)) {
+			str = 'er politi';
+			displ.style.backgroundColor = "red";
+			displ.style.color = 'white';
+		}
+
+		displ.innerHTML = el.value + " " + str;
+	}
+
+	// Load external DB
+	fetch('https://j6kub.github.io/popo.json')
+		.then(res => res.json())
+		.then(data => {
+			allRegs = data;
+			cleanedRegs = allRegs.map(reg => reg.replace(" ", "").toLowerCase());
+
+			displ.innerHTML = "Skriv inn reg.nr";
+			input.disabled = false;
+			input.focus();
+			
+			const params = new URLSearchParams(window.location.search);
+			
+			if (params.get('reg') != "") {
+				input.value = params.get('reg');
+				check(input);
+			}
+			
+		})
+		.catch(err => {
+			displ.innerHTML = "Feil ved lasting av database";
+			console.error("Failed to load DB:", err);
+		});
+</script>
+</html>
