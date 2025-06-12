@@ -80,6 +80,6 @@ window.onload = function() {
 
 }
 foot.onload = setTimeout(function() {
-	relocateFooter();
-	//showSec(gid('hotel'));
+	
+	showSec(section[0]);
 },100);
