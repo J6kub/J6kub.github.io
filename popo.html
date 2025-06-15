@@ -49,6 +49,11 @@
 		}
 
 		displ.innerHTML = el.value + " " + str;
+		if (str == 'er politi') {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	// Load external DB
@@ -67,6 +72,9 @@
 			if (params.get('reg') != "") {
 				input.value = params.get('reg');
 				check(input);
+				if (params.get('json') == 'true') {
+					document.body.innerHTML = check(input);
+				}
 			}
 			
 		})
