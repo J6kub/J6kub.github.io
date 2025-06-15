@@ -71,6 +71,19 @@ function gid(id) {
 	return document.getElementById(id);
 }
 
+let currentLang = 'en';
+
+function loadLanguage(lang) {
+  fetch(`lang/lang-${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (data[key]) el.textContent = data[key];
+      });
+    });
+}
+
 window.onresize = function() {
 	AdjustStyleSheet();
 }

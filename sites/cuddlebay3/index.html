@@ -24,12 +24,12 @@
 				<td>
 					<nav class='pages'>
 						<ul >
-							<li><a onclick=showSec(sections[0])>HOME</a></li>
+							<li><a data-i18n="home-button" onclick=showSec(sections[0])>HOME</a></li>
 							<li>/</li>
-							<li><a onclick=showSec(gid('abtme'))>ABOUT ME</a></li>
+							<li><a data-i18n="abtme-button" onclick=showSec(gid('abtme'))>ABOUT ME</a></li>
 							<li>/</li>
 							
-							<li><a onclick=showSec(gid('contact'))>CONTACT</a></li>
+							<li><a data-i18n="contact-button" onclick=showSec(gid('contact'))>CONTACT</a></li>
 						</ul>
 					</nav>
 				</td>
@@ -38,8 +38,8 @@
 		</table>
         <nav>
             <ul>
-                <li><a class='langB' href="#about">EN<img src='images/en.png'></a></li>
-                <li><a class='langB' href="#services">NO<img src='images/nor.png'></a></li>
+                <li><a class='langB' onclick='loadLanguage("en")'>EN<img src='images/en.png'></a></li>
+                <li><a class='langB' onclick='loadLanguage("no")'>NO<img src='images/nor.png'></a></li>
             </ul>
         </nav>
     </header>
@@ -328,7 +328,7 @@ I am a certified pet sitter from COAPE <text onclick="showSec(gid('coape-cert'))
 		<text style='font-size:42px;width:100%;text-align:center;'>Grooming not available yet</text>
 	</section>
 	
-	<section class='coape-container main-content' style='display:none; 'id='coape-cert'>
+	<section class='coape-container main-content' style='display:none;' id='coape-cert'>
 		<div>
 			<img src='images/coape-cert.png'>
 		</div>
