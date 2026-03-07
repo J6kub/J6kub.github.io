@@ -1,4 +1,5 @@
 {
   "ads_remove_button":false,
-  "test_msg":""
+  "test_msg":"",
+  "potatodb":"https://potet0.kubonk.no:8080/cars"
 }
