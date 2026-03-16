@@ -1,5 +1,5 @@
 {
-  "ads_remove_button":false,
+  "ads_remove_button":true,
   "test_msg":"",
   "potatodb":"https://brozsolutions.no/sivil1db/innsprutning.php"
 }
